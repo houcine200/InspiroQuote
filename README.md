@@ -1,1 +1,1 @@
-Inspiroquote
+InspiroQuote

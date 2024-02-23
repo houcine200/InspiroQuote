@@ -1,15 +1,15 @@
 #!/usr/bin/python3
 """Defines the DBStorage engine."""
-from sqlalchemy import create_engine
-from sqlalchemy.orm import sessionmaker, scoped_session
-from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy import create_engine, MetaData
 from os import getenv
 from models.base_model import Base
-from models.category import Category
+from sqlalchemy.orm import sessionmaker, scoped_session
 from models.quote import Quote
+from models.category import Category
+
 
 class DBStorage:
-    """Manages the storage of InspiroQuote models in a database."""
+    """Manages the storage of hbnb models in a database."""
     __engine = None
     __session = None
 
@@ -20,16 +20,11 @@ class DBStorage:
         host = getenv('IQ_MYSQL_HOST')
         db = getenv('IQ_MYSQL_DB')
 
-        db_url = f"mysql+mysqldb://{user}:{pwd}@{host}/{db}"
+        db_url = 'mysql+mysqldb://{}:{}@{}/{}'.format(user, pwd, host, db)
         self.__engine = create_engine(db_url, pool_pre_ping=True)
-
-        Base.metadata.create_all(self.__engine)
 
         if getenv('IQ_ENV') == "test":
             Base.metadata.drop_all(self.__engine)
-
-        Session = sessionmaker(bind=self.__engine, expire_on_commit=False)
-        self.__session = scoped_session(Session)
 
     def all(self, cls=None):
         """Query on the current database session."""
@@ -70,7 +65,10 @@ class DBStorage:
         """Create all tables in the database and create
         the current database session."""
         Base.metadata.create_all(bind=self.__engine)
-        self.__session = scoped_session(sessionmaker(bind=self.__engine, expire_on_commit=False))
+        session_factory = sessionmaker(bind=self.__engine,
+                                       expire_on_commit=False)
+        self.__scoop = scoped_session(session_factory)
+        self.__session = self.__scoop()
 
     def close(self):
         """Close the private session attribute"""
