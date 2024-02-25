@@ -5,6 +5,7 @@ from sqlalchemy.orm import relationship
 class Category(BaseModel, Base):
     __tablename__ = 'categories'
 
-    name = Column(String(128), nullable=False, unique=True)
-
-    quotes = relationship("Quote", back_populates="category")
+    name = Column(String(128), nullable=False)
+    quotes = relationship("Quote",
+                            backref="category",
+                            cascade="all, delete, delete-orphan")
