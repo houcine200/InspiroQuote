@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InspiroQuotes</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/main.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Categories</h1>
+        <button onclick="fetchCategories()">Fetch Categories</button>
+        <ul id="categories-list"></ul>
+    </div>
+
+    <div class="container">
+        <h2>Quotes</h2>
+        <ul id="quotes-list"></ul>
+    </div>
+
+    <script src="{{ url_for('static', filename='scripts/main.js') }}"></script>
+</body>
+</html>
