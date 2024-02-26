@@ -7,9 +7,18 @@ app = Flask(__name__)
 db_storage = DBStorage()
 db_storage.reload()
 
-@app.route('/inspiro_quotes', methods=['GET'], strict_slashes=False)
-def show_inspiro_quotes():
-    return render_template('inspiro_quotes.html')
+
+@app.route('/', methods=['GET'], strict_slashes=False)
+def home():
+    return render_template('home.html')
+
+@app.route('/categories', methods=['GET'], strict_slashes=False)
+def categories():
+    return render_template('categories.html')
+
+@app.route('/about', methods=['GET'], strict_slashes=False)
+def about():
+    return render_template('about.html')
 
 @app.teardown_appcontext
 def teardown_db(exception):
