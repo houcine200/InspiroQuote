@@ -9,6 +9,7 @@ db_storage.reload()
 
 
 @app.route('/', methods=['GET'], strict_slashes=False)
+@app.route('/home', methods=['GET'], strict_slashes=False)
 def home():
     return render_template('home.html')
 
