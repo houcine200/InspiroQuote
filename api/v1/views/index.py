@@ -5,7 +5,8 @@ from flask import jsonify
 from models.engine.db_storage import storage
 from models.category import Category
 from models.quote import Quote
-
+from models.author import Author
+from models.citation import Citation
 
 @app_views.route('/status', strict_slashes=False)
 def status():
@@ -18,6 +19,8 @@ def stats():
     """Retrieves the number of each object type"""
     stats = {
         "categories": len(storage.all(Category)),
-        "quotes": len(storage.all(Quote))
+        "quotes": len(storage.all(Quote)),
+        "authors": len(storage.all(Author)),
+        "citations": len(storage.all(Citation))
     }
     return jsonify(stats)

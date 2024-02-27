@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 from flask import Flask, render_template
 from models.category import Category
 from models.quote import Quote
@@ -16,6 +18,10 @@ def home():
 @app.route('/categories', methods=['GET'], strict_slashes=False)
 def categories():
     return render_template('categories.html')
+
+@app.route('/authors', methods=['GET'], strict_slashes=False)
+def authors():
+    return render_template('authors.html')
 
 @app.route('/about', methods=['GET'], strict_slashes=False)
 def about():

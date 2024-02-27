@@ -7,9 +7,11 @@ from models.base_model import Base
 from sqlalchemy.orm import sessionmaker, scoped_session
 from models.quote import Quote
 from models.category import Category
+from models.author import Author
+from models.citation import Citation
 
 
-classes = {"Category": Category, "Quote": Quote}
+classes = {"Category": Category, "Quote": Quote, "Author": Author, "Citation": Citation}
 
 
 class DBStorage:

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>InspiroQuotes</title>
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/categories.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/authors.css') }}">
 </head>
 <body>
     <nav>
@@ -16,16 +16,16 @@
         </ul>
     </nav>
     <div class="container">
-        <h1>Categories</h1>
-        <button onclick="fetchCategories()">Fetch Categories</button>
-        <ul id="categories-list"></ul>
+        <h1>Authors</h1>
+        <button onclick="fetchAuthors()">Fetch Authors</button>
+        <ul id="authors-list"></ul>
     </div>
 
     <div class="container">
-        <h2>Quotes</h2>
-        <ul id="quotes-list"></ul>
+        <h2>Citations</h2>
+        <ul id="citations-list"></ul>
     </div>
 
-    <script src="{{ url_for('static', filename='scripts/categories.js') }}"></script>
+    <script src="{{ url_for('static', filename='scripts/authors.js') }}"></script>
 </body>
 </html>
