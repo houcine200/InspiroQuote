@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quote of the Day</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/quote_of_the_day.css') }}">
+</head>
+<body>
+    <div id="quote-container">
+        <h1>Quote of the Day</h1>
+        <div id="quote-text"></div>
+        <div id="quote-author"></div>
+    </div>
+
+    <script src="{{ url_for('static', filename='scripts/quote_of_the_day.js') }}"></script>
+</body>
+</html>

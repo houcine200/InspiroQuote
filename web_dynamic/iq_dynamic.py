@@ -23,6 +23,10 @@ def categories():
 def authors():
     return render_template('authors.html')
 
+@app.route('/quote_of_the_day', methods=['GET'], strict_slashes=False)
+def quote_of_the_day():
+    return render_template('quote_of_the_day.html')
+
 @app.route('/about', methods=['GET'], strict_slashes=False)
 def about():
     return render_template('about.html')
