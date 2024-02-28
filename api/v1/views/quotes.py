@@ -5,7 +5,31 @@ from flask import jsonify, abort, make_response, request
 from models.engine.db_storage import storage
 from models.category import Category
 from models.quote import Quote
+import datetime
 
+
+@app_views.route('/quotes', methods=['GET'], strict_slashes=False)
+def get_all_quotes():
+    """Get all Quote objects."""
+    all_quotes = storage.all(Quote)
+    return jsonify([quote.to_dict() for quote in all_quotes.values()])
+
+@app_views.route('/daily_quote', methods=['GET'], strict_slashes=False)
+def quote_of_the_day():
+    # Get all quotes
+    all_quotes = storage.all(Quote)
+    
+    # Calculate the current day of the year
+    current_date = datetime.datetime.now()
+    day_of_year = current_date.timetuple().tm_yday
+    
+    # Use the current day to index into the list of quotes
+    quote_index = day_of_year % len(all_quotes)
+    
+    # Get the quote of the day
+    quote = list(all_quotes.values())[quote_index]
+    
+    return jsonify(quote.to_dict())
 
 @app_views.route('/categories/<category_id>/quotes',
                  methods=['GET'], strict_slashes=False)
