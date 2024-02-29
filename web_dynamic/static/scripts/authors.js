@@ -58,6 +58,11 @@ document.getElementById('authors-dropdown').addEventListener('change', function(
         fetchCitationsForAuthor(selectedAuthorId);
     } else {
         const citationsContainer = document.getElementById('citations-list');
-        citationsContainer.innerHTML = '<p id="placeholder-text">Welcome to InspiroQuotes Categories! Explore the diverse range of topics and themes to discover profound insights, wisdom, and inspiration from renowned thinkers and leaders.</p>';
+        citationsContainer.innerHTML = `
+            <p id="placeholder-text-1">"Journey through the Echoes of Wisdom"</p>
+            <p id="placeholder-text-2">Welcome to a world where every citation is a gateway to wisdom, a spark of inspiration, and a reflection of the human experience. As you explore the timeless words of remarkable authors, let their insights illuminate your path and enrich your understanding of life's profound mysteries.</p>
+            <p id="placeholder-text-3">Prepare to embark on an odyssey through the echoes of wisdom, where each quote is a beacon of light guiding you towards deeper understanding and personal growth. Embrace the journey, for within these citations lie the seeds of transformation, waiting to blossom in the garden of your mind.</p>
+        `;
     }
 });
+
