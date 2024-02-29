@@ -1,3 +1,7 @@
+document.addEventListener('DOMContentLoaded', () => {
+    fetchCategories();
+});
+
 function fetchCategories() {
     fetch('http://localhost:5001/api/v1/categories')
         .then(response => {
@@ -7,31 +11,37 @@ function fetchCategories() {
             return response.json();
         })
         .then(data => {
-            const categoriesList = document.getElementById('categories-list');
-            categoriesList.innerHTML = ''; // Clear previous categories
+            const categorySelect = document.getElementById('category-select');
 
             data.forEach(category => {
-                const listItem = document.createElement('li');
-                listItem.textContent = `${category.name}`;
-                
-                const viewQuotesButton = document.createElement('button');
-                viewQuotesButton.textContent = 'View Quotes';
-                viewQuotesButton.addEventListener('click', () => fetchQuotesForCategory(category.id));
-                
-                listItem.appendChild(viewQuotesButton);
-                categoriesList.appendChild(listItem);
+                const option = document.createElement('option');
+                option.value = category.id;
+                option.textContent = category.name;
+                categorySelect.appendChild(option);
             });
+            
+            // Automatically trigger search when categories are fetched
+            searchQuotes();
         })
         .catch(error => {
             console.error('Error fetching categories:', error);
         });
 }
 
-function fetchQuotesForCategory(categoryId) {
-    fetch(`http://localhost:5001/api/v1/categories/${categoryId}/quotes`)
+function searchQuotes() {
+    const categoryId = document.getElementById('category-select').value;
+    let url;
+
+    if (categoryId) {
+        url = `http://localhost:5001/api/v1/categories/${categoryId}/quotes`;
+    } else {
+        url = 'http://localhost:5001/api/v1/quotes';
+    }
+
+    fetch(url)
         .then(response => {
             if (!response.ok) {
-                throw new Error('Failed to fetch quotes for category');
+                throw new Error('Failed to fetch quotes');
             }
             return response.json();
         })
@@ -41,11 +51,22 @@ function fetchQuotesForCategory(categoryId) {
 
             data.forEach(quote => {
                 const listItem = document.createElement('li');
-                listItem.textContent = `${quote.text} - ${quote.author}`;
+                const quoteText = document.createElement('div');
+                const authorName = document.createElement('div');
+            
+                quoteText.textContent = `${quote.text}`;
+                authorName.textContent = `${quote.author}`;
+            
+                quoteText.classList.add('quote-text');
+                authorName.classList.add('quote-author');
+            
+                listItem.appendChild(quoteText);
+                listItem.appendChild(authorName);
+            
                 quotesList.appendChild(listItem);
             });
         })
         .catch(error => {
-            console.error('Error fetching quotes for category:', error);
+            console.error('Error fetching quotes:', error);
         });
 }

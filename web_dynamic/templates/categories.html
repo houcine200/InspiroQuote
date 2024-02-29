@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>InspiroQuotes</title>
+    <title>InspiroQuotes - Categories</title>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/categories.css') }}">
 </head>
 <body>
@@ -17,7 +17,12 @@
     </nav>
     <div class="container">
         <h1>Categories</h1>
-        <button onclick="fetchCategories()">Fetch Categories</button>
+        <p>Welcome to InspiroQuotes Categories! Explore the diverse range of topics and themes to discover profound insights, wisdom, and inspiration from renowned thinkers and leaders.</p>
+        <p>Select a category from the dropdown menu below and click 'Search' to explore quotes within that category. Dive into the world of wisdom and inspiration!</p>
+        <select id="category-select">
+            <option value="">Select Category</option>
+        </select>
+        <button onclick="searchQuotes()">Search</button>
         <ul id="categories-list"></ul>
     </div>
 
