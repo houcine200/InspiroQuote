@@ -37,23 +37,13 @@ function fetchCitationsForAuthor(authorId) {
         })
         .then(data => {
             const citationsContainer = document.getElementById('citations-list');
-            citationsContainer.innerHTML = ''; // Clear previous citations
+            citationsContainer.innerHTML = '';
 
             data.forEach(citation => {
-                // Create a table for each citation
                 const table = document.createElement('table');
-                table.style.width = '100%'; // Set the table width
-                table.style.marginBottom = '20px'; // Space between tables
-                table.style.borderCollapse = 'collapse'; // Optional: for styling
-                
-                // Create a row for the citation text
                 const row = table.insertRow();
                 const cell = row.insertCell();
-                cell.textContent = citation.text; // Assuming citation object has a 'text' property
-                cell.style.padding = '10px'; // Optional: for styling
-                cell.style.border = '1px solid #ddd'; // Optional: for styling
-
-                // Append the table to the container
+                cell.textContent = citation.text;
                 citationsContainer.appendChild(table);
             });
         })
@@ -67,7 +57,7 @@ document.getElementById('authors-dropdown').addEventListener('change', function(
     if (selectedAuthorId) {
         fetchCitationsForAuthor(selectedAuthorId);
     } else {
-        document.getElementById('citations-list').innerHTML = '';
+        const citationsContainer = document.getElementById('citations-list');
+        citationsContainer.innerHTML = '<p id="placeholder-text">Welcome to InspiroQuotes Categories! Explore the diverse range of topics and themes to discover profound insights, wisdom, and inspiration from renowned thinkers and leaders.</p>';
     }
 });
-
