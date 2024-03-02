@@ -5,94 +5,80 @@
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Nunito', Arial, sans-serif;
     line-height: 1.6;
-    margin: 0;
-    padding: 0;
-    background: #f4f4f4;
+    background: #f0eae2; /* A light cream background */
     color: #333;
 }
 
-nav {
-    background-color: #444;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+header {
+    background-color: #333; /* A dark brown for the header */
+    padding: 20px 0;
+    color: white;
 }
 
 nav ul {
     list-style: none;
-    padding: 10px 0;
+    padding: 0;
     text-align: center;
 }
 
 nav ul li {
     display: inline;
-    margin-right: 20px;
+    margin: 0 25px;
 }
 
 nav ul li a {
-    color: #fff;
+    color: #fff; /* White text for contrast */
     text-decoration: none;
-    font-size: 1.2em;
-    padding: 5px 10px;
-    border-radius: 5px;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    font-weight: bold;
+    transition: color 0.3s ease;
 }
 
-nav ul li a:hover, nav ul li a:focus {
-    background-color: #555;
-    color: #ffd700;
+nav ul li a:hover {
+    color: #a1887f; /* A soft brown for hover state */
 }
 
 .container {
-    max-width: 1100px;
-    margin: 20px auto;
+    max-width: 800px;
+    margin: 40px auto;
     padding: 20px;
-    background: #fff;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background: #ffffff; /* Pure white background */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* A subtle shadow for depth */
+    border-left: 5px solid #795548; /* A brown accent border on the left */
+    font-size: 1.1rem;
+    color: #3e2723; /* Dark brown text color for better readability */
 }
 
 h1 {
-    color: #333;
+    font-size: 2.5rem;
+    color: #3e2723; /* Dark brown to match the theme */
+    text-align: center;
+    margin-bottom: 30px;
 }
 
 p {
+    text-align: justify;
     margin-bottom: 20px;
+    line-height: 1.8;
 }
 
 footer {
-    background-color: #444;
-    color: #ddd;
+    background-color: #333; /* Matching the header for consistency */
+    color: #fff;
     text-align: center;
     padding: 10px 0;
-    position: relative;
+    position: fixed;
     bottom: 0;
     width: 100%;
 }
 
 footer a {
-    color: #ffd700;
+    color: #333; /* A lighter brown for links, ensuring readability */
     text-decoration: none;
 }
 
 footer a:hover {
     text-decoration: underline;
-}
-
-html, body {
-    height: 100%;
-}
-
-.content-wrap {
-    min-height: calc(100% - 40px);
-    margin-bottom: -40px;
-}
-
-footer {
-    height: 40px;
-    clear: both;
-}
-
-body > .content-wrap {
-    padding-bottom: 40px;
 }
