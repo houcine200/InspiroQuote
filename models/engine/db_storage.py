@@ -8,7 +8,6 @@ from sqlalchemy.orm import sessionmaker, scoped_session
 from models.quote import Quote
 from models.category import Category
 from models.author import Author
-from models.citation import Citation
 from models.user import User
 from models.review import Review
 
@@ -17,7 +16,6 @@ classes = {
     "Category": Category,
     "Quote": Quote,
     "Author": Author,
-    "Citation": Citation,
     "User": User,  # Add User class
     "Review": Review  # Add Review class
 }
