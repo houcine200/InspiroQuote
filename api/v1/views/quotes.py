@@ -5,6 +5,7 @@ from flask import jsonify, abort, make_response, request
 from models.engine.db_storage import storage
 from models.category import Category
 from models.quote import Quote
+from models.author import Author
 import datetime
 
 
@@ -16,34 +17,52 @@ def get_all_quotes():
 
 @app_views.route('/daily_quote', methods=['GET'], strict_slashes=False)
 def quote_of_the_day():
-    # Get all quotes
-    all_quotes = storage.all(Quote)
-    
-    # Calculate the current day of the year
+
+    all_quotes = storage.all(Quote).values()
+
+    if not all_quotes:
+        return jsonify({"error": "No quotes available"}), 404
+
     current_date = datetime.datetime.now()
     day_of_year = current_date.timetuple().tm_yday
-    
-    # Use the current day to index into the list of quotes
-    quote_index = day_of_year % len(all_quotes)
-    
-    # Get the quote of the day
-    quote = list(all_quotes.values())[quote_index]
-    
-    return jsonify(quote.to_dict())
 
-@app_views.route('/categories/<category_id>/quotes',
-                 methods=['GET'], strict_slashes=False)
+    quote_list = list(all_quotes)
+    quote_index = day_of_year % len(quote_list)
+    selected_quote = quote_list[quote_index]
+
+    author = storage.get(Author, selected_quote.author_id)
+    if author is None:
+        abort(404)
+
+    quote_dict = selected_quote.to_dict()
+    quote_dict['author_name'] = author.name
+
+    return jsonify(quote_dict)
+
+
+@app_views.route('/categories/<category_id>/quotes', methods=['GET'], strict_slashes=False)
 def get_quotes_by_category(category_id):
-    """Get all Quote objects of a Category."""
-    list_quotes = []
     category = storage.get(Category, category_id)
     if category is None:
         abort(404)
-
+    quotes_with_authors = []
     for quote in category.quotes:
-        list_quotes.append(quote.to_dict())
-    return jsonify(list_quotes)
+        quote_dict = quote.to_dict()
+        quote_dict['author_name'] = quote.author.name
+        quotes_with_authors.append(quote_dict)
+    return jsonify(quotes_with_authors)
 
+@app_views.route('/authors/<author_id>/quotes', methods=['GET'], strict_slashes=False)
+def get_quotes_by_author(author_id):
+    """Get all Quote objects by author ID."""
+    # Assuming you have an 'Author' model with a 'quotes' relationship defined
+    author = storage.get(Author, author_id)
+    if author is None:
+        abort(404)  # Author not found
+    
+    # Utilize the relationship between Author and Quote to fetch associated quotes
+    quotes = author.quotes if hasattr(author, 'quotes') else []
+    return jsonify([quote.to_dict() for quote in quotes])
 
 @app_views.route('/quotes/<quote_id>', methods=['GET'], strict_slashes=False)
 def get_quote(quote_id):

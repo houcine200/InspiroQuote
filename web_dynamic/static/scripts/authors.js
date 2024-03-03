@@ -27,42 +27,43 @@ function fetchAuthors() {
         });
 }
 
-function fetchCitationsForAuthor(authorId) {
-    fetch(`http://localhost:5001/api/v1/authors/${authorId}/citations`)
+function fetchQuotesForAuthor(authorId) {
+    fetch(`http://localhost:5001/api/v1/authors/${authorId}`)
         .then(response => {
             if (!response.ok) {
-                throw new Error('Failed to fetch citations for author');
+                throw new Error('Failed to fetch quotes for author');
             }
             return response.json();
         })
         .then(data => {
-            const citationsContainer = document.getElementById('citations-list');
-            citationsContainer.innerHTML = '';
+            const quotesContainer = document.getElementById('citations-list'); // Consider renaming this ID to 'quotes-list' for clarity
+            quotesContainer.innerHTML = '';
 
-            data.forEach(citation => {
+            // Assuming the backend sends quotes as part of the author object
+            data.quotes.forEach(quote => {
                 const table = document.createElement('table');
                 const row = table.insertRow();
                 const cell = row.insertCell();
-                cell.textContent = citation.text;
-                citationsContainer.appendChild(table);
+                cell.textContent = quote.text; // Display the quote text
+                quotesContainer.appendChild(table);
             });
         })
         .catch(error => {
-            console.error('Error fetching citations for author:', error);
+            console.error('Error fetching quotes for author:', error);
         });
 }
 
 document.getElementById('authors-dropdown').addEventListener('change', function() {
     const selectedAuthorId = this.value;
     if (selectedAuthorId) {
-        fetchCitationsForAuthor(selectedAuthorId);
+        fetchQuotesForAuthor(selectedAuthorId); // Use the updated function
     } else {
-        const citationsContainer = document.getElementById('citations-list');
-        citationsContainer.innerHTML = `
+        // Placeholder content remains the same
+        const quotesContainer = document.getElementById('citations-list'); // Consider renaming this ID to 'quotes-list' for clarity
+        quotesContainer.innerHTML = `
             <p id="placeholder-text-1">"Journey through the Echoes of Wisdom"</p>
             <p id="placeholder-text-2">Welcome to a world where every citation is a gateway to wisdom, a spark of inspiration, and a reflection of the human experience. As you explore the timeless words of remarkable authors, let their insights illuminate your path and enrich your understanding of life's profound mysteries.</p>
             <p id="placeholder-text-3">Prepare to embark on an odyssey through the echoes of wisdom, where each quote is a beacon of light guiding you towards deeper understanding and personal growth. Embrace the journey, for within these citations lie the seeds of transformation, waiting to blossom in the garden of your mind.</p>
         `;
     }
 });
-

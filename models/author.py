@@ -6,6 +6,6 @@ class Author(BaseModel, Base):
     __tablename__ = 'authors'
 
     name = Column(String(128), nullable=False)
-    citations = relationship("Citation",
-                            backref="author",
-                            cascade="all, delete, delete-orphan")
+    quotes = relationship("Quote", 
+                          backref="author", 
+                          cascade="all, delete, delete-orphan")

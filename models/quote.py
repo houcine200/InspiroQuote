@@ -7,4 +7,4 @@ class Quote(BaseModel, Base):
 
     category_id = Column(String(60), ForeignKey('categories.id'), nullable=False)
     text = Column(String(512), nullable=False)
-    author = Column(String(128), nullable=False)
+    author_id = Column(String(60), ForeignKey('authors.id'))
