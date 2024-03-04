@@ -1,3 +1,7 @@
+{% extends "base.html" %}
+{% block title %}About Page{% endblock %}
+
+{% block content %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,15 +13,6 @@
 <body>
     <div class="content-wrap">
         <header>
-            <nav>
-                <ul>
-                    <li><a href="/home">Home</a></li>
-                    <li><a href="/categories">Categories</a></li>
-                    <li><a href="/authors">Authors</a></li>
-                    <li><a href="/quote_of_the_day">Quote Of The Day</a></li>
-                    <li><a href="/about">About</a></li>
-                </ul>
-            </nav>
         </header>
         <main class="container">
             <h1>About InspiroQuotes</h1>
@@ -29,3 +24,4 @@
     </footer>
 </body>
 </html>
+{% endblock %}

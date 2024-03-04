@@ -1,7 +1,3 @@
-{% extends "base.html" %}
-{% block title %}Home Page{% endblock %}
-
-{% block content %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,19 +10,23 @@
 <body>
     <header>
         <h1>InspiroQuotes</h1>
+        <p>Welcome, {{ user.first_name }}!</p>
         <p>Share our collection of inspirational and famous quotes by authors you know and love.</p>
     </header>
 
+    <nav>
+        <ul>
+            <li><a href="/home">Home</a></li>
+            <li><a href="/categories">Categories</a></li>
+            <li><a href="/authors">Authors</a></li>
+            <li><a href="/quote_of_the_day">Quote Of The Day</a></li>
+            <li><a href="/about">About</a></li>
+        </ul>
+    </nav>
 
     <main>
         <section>
-            {% if g.user %}
-            <!-- Display personalized welcome message for logged-in user -->
-            <h2>Welcome, {{ g.user.first_name }}!</h2>
-            {% else %}
-            <!-- Display generic welcome message for non-logged-in user -->
             <h2>Welcome to InspiroQuotes</h2>
-            {% endif %}
             <p>Discover the wisdom of ages, encapsulated in quotes that inspire, motivate, and provoke thought. Whether you're seeking solace, inspiration, or a new perspective, our curated collection awaits.</p>
         </section>
     </main>
@@ -36,4 +36,3 @@
     </footer>
 </body>
 </html>
-{% endblock %}

@@ -1,3 +1,7 @@
+{% extends "base.html" %}
+{% block title %}Categories Page{% endblock %}
+
+{% block content %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,15 +11,7 @@
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/categories.css') }}">
 </head>
 <body>
-    <nav>
-        <ul>
-            <li><a href="/home">Home</a></li>
-            <li><a href="/categories">Categories</a></li>
-            <li><a href="/authors">Authors</a></li>
-            <li><a href="/quote_of_the_day">Quote Of The Day</a></li>
-            <li><a href="/about">About</a></li>
-        </ul>
-    </nav>
+    
     <div class="container">
         <h1>Categories</h1>
         <p>Welcome to InspiroQuotes Categories! Explore the diverse range of topics and themes to discover profound insights, wisdom, and inspiration from renowned thinkers and leaders.</p>
@@ -35,3 +31,4 @@
     <script src="{{ url_for('static', filename='scripts/categories.js') }}"></script>
 </body>
 </html>
+{% endblock %}
