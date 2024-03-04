@@ -6,6 +6,7 @@ from models.category import Category
 from models.quote import Quote
 from models.engine.db_storage import DBStorage, storage
 from models.user import User
+from models.review import Review
 
 app = Flask(__name__)
 db_storage = DBStorage()
@@ -122,6 +123,42 @@ def logout():
     response.set_cookie('user_email', '', expires=0)
     return response
 
+@app.route('/reviews', methods=['GET', 'POST'], strict_slashes=False)
+def reviews():
+    load_logged_in_user()  # Load current user
+    user = g.user if hasattr(g, 'user') else None
+
+    if request.method == 'POST':
+        if user:
+            text = request.form.get('text')
+            if text:
+                new_review = Review(text=text, user_id=user['id'])
+                new_review.save()
+                return redirect(url_for('reviews'))
+            else:
+                return jsonify({'error': 'Review text is required'}), 400
+        else:
+            return jsonify({'error': 'User not logged in'}), 401
+
+    # Fetch all users
+    users_response = requests.get('http://localhost:5001/api/v1/users')
+    if users_response.status_code == 200:
+        users_data = users_response.json()
+    else:
+        return jsonify({'error': 'Failed to fetch users'}), 500
+    
+    # Fetch reviews for each user
+    reviews_by_user = {}
+    for user in users_data:
+        user_id = user['id']
+        reviews_response = requests.get(f'http://localhost:5001/api/v1/users/{user_id}/reviews')
+        if reviews_response.status_code == 200:
+            reviews_data = reviews_response.json()
+            reviews_by_user[user_id] = reviews_data
+        else:
+            reviews_by_user[user_id] = []
+    
+    return render_template('reviews.html', reviews_by_user=reviews_by_user, user=user)
 
 @app.teardown_appcontext
 def teardown_db(exception):
