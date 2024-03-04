@@ -5,15 +5,6 @@ from api.v1.views import app_views
 from flask import jsonify, abort, make_response, request
 from models.engine.db_storage import storage
 from models.author import Author
-
-
-#!/usr/bin/python3
-
-"""Module containing API routes for Author objects."""
-from api.v1.views import app_views
-from flask import jsonify, abort, make_response, request
-from models.engine.db_storage import storage
-from models.author import Author  # Assuming the model includes a relationship to quotes
 from models.quote import Quote
 
 @app_views.route('/authors', methods=['GET'], strict_slashes=False)
@@ -23,7 +14,7 @@ def retrieve_all_authors():
     list_authors = []
     for author in all_authors:
         author_dict = author.to_dict()
-        author_dict['quotes'] = [quote.to_dict() for quote in author.quotes]  # Include quotes
+        author_dict['quotes'] = [quote.to_dict() for quote in author.quotes]  
         list_authors.append(author_dict)
     return jsonify(list_authors)
 
@@ -34,12 +25,8 @@ def retrieve_author(author_id):
     if author is None:
         abort(404)
     author_dict = author.to_dict()
-    author_dict['quotes'] = [quote.to_dict() for quote in author.quotes]  # Include quotes
+    author_dict['quotes'] = [quote.to_dict() for quote in author.quotes]  
     return jsonify(author_dict)
-
-# Other methods (remove_author, make_author, renew_author) remain unchanged
-
-
 
 @app_views.route('/authors/<string:author_id>', methods=['DELETE'], strict_slashes=False)
 def remove_author(author_id):

@@ -55,12 +55,10 @@ def get_quotes_by_category(category_id):
 @app_views.route('/authors/<author_id>/quotes', methods=['GET'], strict_slashes=False)
 def get_quotes_by_author(author_id):
     """Get all Quote objects by author ID."""
-    # Assuming you have an 'Author' model with a 'quotes' relationship defined
     author = storage.get(Author, author_id)
     if author is None:
-        abort(404)  # Author not found
-    
-    # Utilize the relationship between Author and Quote to fetch associated quotes
+        abort(404)
+
     quotes = author.quotes if hasattr(author, 'quotes') else []
     return jsonify([quote.to_dict() for quote in quotes])
 

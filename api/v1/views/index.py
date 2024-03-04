@@ -20,6 +20,5 @@ def stats():
         "categories": len(storage.all(Category)),
         "quotes": len(storage.all(Quote)),
         "authors": len(storage.all(Author)),
-        "citations": len(storage.all(Citation))
     }
     return jsonify(stats)
