@@ -104,7 +104,8 @@ def login():
 def profile():
     user_email = request.cookies.get('user_email')
     if not user_email:
-        return jsonify({'error': 'User not logged in.'}), 401  # Unauthorized
+        error_message = '<h1>User not logged in.</h1>'
+        return error_message, 401
 
     response = requests.get(API_URL)
     if response.status_code == 200:
@@ -151,12 +152,13 @@ def reviews():
     reviews_by_user = {}
     for user in users_data:
         user_id = user['id']
+        user_name = f"{user['first_name']} {user['last_name']}"
         reviews_response = requests.get(f'http://localhost:5001/api/v1/users/{user_id}/reviews')
         if reviews_response.status_code == 200:
             reviews_data = reviews_response.json()
-            reviews_by_user[user_id] = reviews_data
+            reviews_by_user[user_name] = reviews_data
         else:
-            reviews_by_user[user_id] = []
+            reviews_by_user[user_name] = []
     
     return render_template('reviews.html', reviews_by_user=reviews_by_user, user=user)
 

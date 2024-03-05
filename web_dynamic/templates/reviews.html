@@ -1,3 +1,7 @@
+{% extends "base.html" %}
+{% block title %}Reviews Page{% endblock %}
+
+{% block content %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,11 +25,10 @@
     
     <hr>
     
-    {% for user_id, reviews in reviews_by_user.items() %}
-    <h2>User: {{ user_id }}</h2>
+    {% for user, reviews in reviews_by_user.items() %}
     <ul>
         {% for review in reviews %}
-        <li>{{ review.text }}</li>
+        <li>{{ user }}: {{ review.text }}</li>
         {% endfor %}
     </ul>
     {% endfor %}
@@ -43,3 +46,4 @@
     {% endif %}
 </body>
 </html>
+{% endblock %}
