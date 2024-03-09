@@ -9,24 +9,20 @@ from models.quote import Quote
 
 @app_views.route('/authors', methods=['GET'], strict_slashes=False)
 def retrieve_all_authors():
-    """Get all authors and their quotes."""
+    """Get all authors without their quotes."""
     all_authors = storage.all(Author).values()
-    list_authors = []
-    for author in all_authors:
-        author_dict = author.to_dict()
-        author_dict['quotes'] = [quote.to_dict() for quote in author.quotes]  
-        list_authors.append(author_dict)
+    list_authors = [author.to_dict() for author in all_authors]  
     return jsonify(list_authors)
+
 
 @app_views.route('/authors/<author_id>', methods=['GET'], strict_slashes=False)
 def retrieve_author(author_id):
-    """Get an author and their quotes by id."""
+    """Get an author by id without their quotes."""
     author = storage.get(Author, author_id)
     if author is None:
         abort(404)
-    author_dict = author.to_dict()
-    author_dict['quotes'] = [quote.to_dict() for quote in author.quotes]  
-    return jsonify(author_dict)
+    return jsonify(author.to_dict())
+
 
 @app_views.route('/authors/<string:author_id>', methods=['DELETE'], strict_slashes=False)
 def remove_author(author_id):

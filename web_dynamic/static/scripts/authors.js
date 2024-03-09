@@ -28,25 +28,32 @@ function fetchAuthors() {
 }
 
 function fetchQuotesForAuthor(authorId) {
-    fetch(`http://localhost:5001/api/v1/authors/${authorId}`)
+    fetch(`http://localhost:5001/api/v1/authors/${authorId}/quotes`)
         .then(response => {
             if (!response.ok) {
                 throw new Error('Failed to fetch quotes for author');
             }
             return response.json();
         })
-        .then(data => {
-            const quotesContainer = document.getElementById('citations-list'); // Consider renaming this ID to 'quotes-list' for clarity
+        .then(quotes => {
+            const quotesContainer = document.getElementById('citations-list');
             quotesContainer.innerHTML = '';
 
-            // Assuming the backend sends quotes as part of the author object
-            data.quotes.forEach(quote => {
-                const table = document.createElement('table');
-                const row = table.insertRow();
-                const cell = row.insertCell();
-                cell.textContent = quote.text; // Display the quote text
-                quotesContainer.appendChild(table);
+            quotes.forEach(quote => {
+                const quoteCard = document.createElement('div');
+                quoteCard.classList.add('quote-card');
+
+                const quoteText = document.createElement('p');
+                quoteText.classList.add('quote-text');
+                quoteText.textContent = `"${quote.text}"`;
+
+                quotesContainer.appendChild(quoteCard);
+                quoteCard.appendChild(quoteText);
             });
+
+            if (quotes.length === 0) {
+                quotesContainer.innerHTML = '<p>No quotes found for this author.</p>';
+            }
         })
         .catch(error => {
             console.error('Error fetching quotes for author:', error);
@@ -56,10 +63,9 @@ function fetchQuotesForAuthor(authorId) {
 document.getElementById('authors-dropdown').addEventListener('change', function() {
     const selectedAuthorId = this.value;
     if (selectedAuthorId) {
-        fetchQuotesForAuthor(selectedAuthorId); // Use the updated function
+        fetchQuotesForAuthor(selectedAuthorId);
     } else {
-        // Placeholder content remains the same
-        const quotesContainer = document.getElementById('citations-list'); // Consider renaming this ID to 'quotes-list' for clarity
+        const quotesContainer = document.getElementById('citations-list');
         quotesContainer.innerHTML = `
             <p id="placeholder-text-1">"Journey through the Echoes of Wisdom"</p>
             <p id="placeholder-text-2">Welcome to a world where every citation is a gateway to wisdom, a spark of inspiration, and a reflection of the human experience. As you explore the timeless words of remarkable authors, let their insights illuminate your path and enrich your understanding of life's profound mysteries.</p>
