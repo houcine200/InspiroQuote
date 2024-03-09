@@ -2,14 +2,28 @@
 {% block title %}Login Page{% endblock %}
 
 {% block content %}
-<form action="/login" method="post">
-	<p>Email:</p>
-	<p><input type="email" name="email" required /></p>
-	<p>Password:</p>
-	<p><input type="password" name="password" required /></p>
-	<p><input type="submit" value="Login"/></p>
-</form>
-{% if error %}
-<p style="color: red;">{{ error }}</p>
-{% endif %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InspiroQuotes</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/login.css') }}">
+</head>
+<div class="container mt-5"> <!-- Bootstrap classes for margin-top and a container -->
+    <form action="/login" method="post" class="login-form">
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" class="form-control" name="email" required> <!-- Bootstrap form-control class -->
+        </div>
+        <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" id="password" class="form-control" name="password" required>
+        </div>
+        <div class="form-group">
+            <input type="submit" class="btn btn-primary" value="Login"> <!-- Bootstrap button classes -->
+        </div>
+        {% if error %}
+        <p class="error-message text-danger">{{ error }}</p> <!-- Bootstrap text color class -->
+        {% endif %}
+    </form>
+</div>
 {% endblock %}

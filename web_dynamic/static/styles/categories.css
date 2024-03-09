@@ -1,134 +1,78 @@
-/* Body and container styles */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f5f5f5;
-    margin: 0;
-    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(to right top, #e9ecef, #dae0e5, #c8d1db, #b9c2d1, #abc4c8, #c1a2f3, #b58ff2, rgb(173, 123, 244), #7d34f3, #7a30f2, #7a30f1, #6610f2);
+    padding: 20px;
+    min-height: 100vh;
+    background-attachment: fixed;
+    color: #333;
 }
 
 .container {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+    width: 100%;
     max-width: 800px;
-    margin: 20px auto; /* Center the container vertically */
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 40px auto;
 }
 
-/* Style navigation */
-nav {
-    background-color: #444;
-}
-
-nav ul {
-    list-style: none;
-    padding: 10px 0;
+h1, h2 {
     text-align: center;
+    color: #4c51bf;
+}
+
+p {
+    text-align: justify;
+    margin-bottom: 20px;
+}
+
+#category-select, button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px;
+    width: 50%;
+    border-radius: 8px;
+    border: 2px solid #ced4da;
+    background-color: #f8f9fa;
+    color: #495057;
+}
+
+button {
+    background-color: #4c51bf;
+    color: white;
+    cursor: pointer;
+    border: none;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#categories-list, #quotes-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+#categories-list li, #quotes-list li {
+    background-color: #f8f9fa;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 8px;
+    border-left: 5px solid #4c51bf;
+}
+
+nav {
+    background-color: #2A2A72;
 }
 
 nav ul li {
     display: inline;
-    margin-right: 20px;
+    margin: 0 10px;
+    background-color: #fafafa;
+    padding: 10px; 
+    border-radius: 8px; 
+    border-left: 5px solid #4c51bf;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
-
-nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 1.2em;
-    transition: color 0.3s ease;
-}
-
-nav ul li a:hover {
-    color: #ffd700; /* Change color on hover */
-}
-
-
-/* Headings styles */
-h1, h2 {
-    color: #333;
-}
-
-/* Select and button styles */
-#category-select {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 16px;
-    margin-right: 10px;
-}
-
-button {
-    padding: 10px 20px;
-    background-color: #333;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 16px;
-}
-
-button:hover {
-    background-color: #333;
-}
-
-/* Categories list styles */
-#categories-list {
-    padding: 0;
-    margin: 20px 0;
-}
-
-#categories-list li {
-    list-style-type: none;
-    margin-bottom: 10px;
-}
-
-/* Quotes list styles */
-#quotes-list {
-    padding-left: 0;
-    margin-top: 20px;
-    border-top: 1px solid #ccc;
-}
-
-#quotes-list li {
-    list-style-type: none;
-    padding: 10px 0;
-    border-bottom: 1px solid #ccc;
-}
-
-#quotes-list li:last-child {
-    border-bottom: none; /* Remove border from the last quote */
-}
-
-/* Quotes list styles */
-#quotes-list {
-    padding-left: 20px;
-}
-
-/* For odd quotes */
-#quotes-list li:nth-child(odd) {
-    background-color: #cfe2f3; /* Light blue background for odd quotes */
-}
-
-/* For even quotes */
-#quotes-list li:nth-child(even) {
-    background-color: #ffffff; /* White background for even quotes */
-}
-
-.quote-text {
-    font-size: 20px; /* Adjust font size as desired */
-    font-weight: bold; /* Optionally set font weight */
-}
-
-.quote-author {
-    font-style: italic;
-    color: #555; /* Darker gray color for author */
-}
-
-p {
-    font-family: 'Arial', sans-serif; /* Use Arial font or fallback to sans-serif */
-    font-size: 16px; /* Adjust font size as needed */
-    line-height: 1.5; /* Adjust line height for better readability */
-    color: #333; /* Set text color */
-}
-
-

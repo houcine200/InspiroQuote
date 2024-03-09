@@ -1,0 +1,84 @@
+/* Enhanced reviews.css */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background: linear-gradient(to right top, #e9ecef, #dae0e5, #c8d1db, #b9c2d1, #abc4c8, #c1a2f3, #b58ff2, rgb(173, 123, 244), #7d34f3, #7a30f2, #7a30f1, #6610f2);
+    color: #333;
+}
+
+main {
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+h2 {
+    color: #1a202c;
+    margin-bottom: 16px;
+}
+
+
+textarea {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-top: 10px;
+    border: 2px solid #24568b;
+    border-radius: 8px;
+    box-sizing: border-box;
+    resize: vertical;
+    font-family: inherit;
+}
+
+input[type="submit"] {
+    background-color: #24568b;
+    color: #ffffff;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+input[type="submit"]:hover {
+    background-color: #24568b;
+}
+
+form {
+    margin-top: 25px;
+}
+
+hr {
+    margin-top: 25px;
+    border: none;
+    height: 1px;
+    background-color: #24568b;
+}
+
+@media screen and (min-width: 768px) {
+    main {
+        padding: 30px;
+    }
+    
+    textarea {
+        padding: 15px;
+    }
+}
+
+nav {
+    background-color: #2A2A72;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 10px;
+    background-color: #fafafa;
+    padding: 10px; 
+    border-radius: 8px; 
+    border-left: 5px solid #4c51bf;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}

@@ -1,0 +1,102 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(to right top, #e9ecef, #dae0e5, #c8d1db, #b9c2d1, #abc4c8, #c1a2f3, #b58ff2, rgb(173, 123, 244), #7d34f3, #7a30f2, #7a30f1, #6610f2);
+    margin: 0;
+    padding: 20px;
+    min-height: 100vh; /* Ensure full height */
+    background-attachment: fixed;
+}
+
+.centered-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 40px);
+    text-align: center;
+}
+
+.login-form {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 400px;
+    position: relative;
+    overflow: hidden;
+}
+
+.login-form:before {
+    content: '';
+    position: absolute;
+    width: 120%;
+    height: 120%;
+    background: linear-gradient(120deg, #ffffff, #6610f2, #6f42c1);
+    animation: rotate 6s infinite linear;
+    top: -10%;
+    left: -10%;
+    border-radius: 50%;
+    z-index: 0;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.form-group {
+    position: relative;
+    z-index: 1;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #000000;
+}
+
+.form-group input[type="email"],
+.form-group input[type="password"] {
+    width: calc(100% - 24px);
+    padding: 12px;
+    border: 2px solid #ced4da;
+    border-radius: 8px;
+    transition: border-color 0.3s;
+}
+
+.form-group input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+
+.error-message {
+    color: #dc3545;
+    text-align: center;
+    margin-top: 15px;
+}
+
+nav {
+    background-color: #2A2A72;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 10px;
+    background-color: #fafafa;
+    padding: 10px; 
+    border-radius: 8px; 
+    border-left: 5px solid #4c51bf;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}

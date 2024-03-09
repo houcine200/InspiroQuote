@@ -8,7 +8,10 @@
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">Navbar</a>
+        <a class="navbar-brand" href="/home">
+            <img src="static/images/logo_inspiroquote.webp" alt="InspiroQuote Logo" style="height: 70px;">
+             
+         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -50,7 +53,7 @@
 
     <!-- Mini-profile section -->
     <div class="mini-profile">
-        {% if user %}
+        {% if g.user %}
         <p>Welcome, {{ user.first_name }}!</p>
         <!-- Add more profile information here if needed -->
         {% endif %}

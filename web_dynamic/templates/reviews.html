@@ -7,16 +7,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/reviews.css') }}">
     <title>User Reviews</title>
 </head>
 <body>
     <main>
         <section>
             {% if g.user %}
-            <!-- Display personalized welcome message for logged-in user -->
             <h2>Welcome, {{ g.user.first_name }}!</h2>
             {% else %}
-            <!-- Display generic welcome message for non-logged-in user -->
             <h2>Welcome to User Reviews</h2>
             {% endif %}
             <p>Explore reviews from users and share your thoughts with the community.</p>
