@@ -160,6 +160,12 @@ nav ul li {
     border-radius: 20px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     background-color: #4c51bf;
+    background-color: gray;
+    border-radius: 0;
+    box-shadow: none;
+    background-color: transparent;
+    border: none;
+
 }
 
 .section-with-image-left .image-container {
@@ -223,4 +229,12 @@ nav ul li {
         margin-left: auto;
         margin-right: auto;
     }
+}
+
+.landing {
+    background-color: gray;
+    border-radius: 0;
+    box-shadow: none;
+    background-color: transparent;
+    border: none;
 }
