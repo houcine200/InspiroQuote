@@ -32,7 +32,7 @@ section {
     border-radius: 20px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     width: 100%;
-    max-width: 800px; /* Adjust based on the content width */
+    /* Adjust based on the content width */
     margin-bottom: 20px; /* Space between sections if you add more */
 }
 
@@ -72,3 +72,37 @@ nav ul li {
     border-left: 5px solid #4c51bf;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
+
+.image {
+    width: 100%; /* Set the maximum width of the image to 100% of its container */
+    height: auto; /* Maintain the aspect ratio of the image */
+    display: block; /* Ensure the image is displayed as a block element */
+    margin: 0 auto; /* Center the image horizontally */
+    text-align: right;  
+}
+
+.counter {
+    display: flex;
+    flex-direction: column;
+}
+
+.counter-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px; /* Increased margin for more space */
+    margin-left: 20px;
+}
+
+.counter-count {
+    width: 75px; /* Adjust as needed */
+    height: 75px; /* Adjust as needed */
+    border-radius: 50%; /* Ensures circular shape */
+    background-color: #007bff; /* Change this color as needed */
+    color: #fff;
+    font-size: 16px; /* Adjust as needed */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px; /* Adjust as needed */
+}
+

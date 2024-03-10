@@ -29,7 +29,7 @@
             <p>Discover the wisdom of ages, encapsulated in quotes that inspire, motivate, and provoke thought. Whether you're seeking solace, inspiration, or a new perspective, our curated collection awaits.</p>
         </section>
 
-        <!-- First Landing Page Section -->
+        <!-- First Landing Page Section  ha fin tzid dakchi dyalk-->
         <section class="landing">
             <div class="row">
                 <div class="col-lg-4">
@@ -39,41 +39,89 @@
                 <div class="col-lg-4">
                     <h2>No API Key Required</h2>
                     <p>The Inspiro Quotes API can be used free of charge but you may not use this service in a manner that exceeds reasonable request volume. When no API key is provided, attribution is required and the number of requests per IP address is limited.</p>
-                    <p><a href="https://docs.zenquotes.io/zenquotes-documentation/">Check out the full documentation&nbsp;&rarr;</a></p>
+                    <p><a href="https://docs.inspiroquote.me/zenquotes-documentation/">Check out the full documentation&nbsp;&rarr;</a></p>
                 </div>
                 <div class="col-lg-4">
                     <h2>Unlimited Requests</h2>
                     <p>If you would like to enable Access-Control-Allow-Origin headers, obtain unlimited API requests, make advanced calls, and run your own version of ZenQuotes, please consider a premium subscription.</p>
-                    <p><a class="btn btn-lg btn-primary" href="https://my.zenquotes.io/" role="button">Subscribe</a></p>
+                    <p><a class="btn btn-lg btn-primary" href="https://my.inspiroquote.me/" role="button">Subscribe</a></p>
                 </div>
             </div>
         </section>    
-
-        <!-- Second Landing Page Section -->
+        <!-- 7add hna-->
+        
         <section class="landing">
-            <div class="row">
-                <div class="col-lg-4">
-                    <h2>Influential Figures. Timeless Wisdom.</h2>
-                    <p>ZenQuotes.io features inspiration from the world's most important philosophers, inventors, scientists, religious figures, and leaders throughout history.</p>
-                    <div class="counter">
-                        <p class="counter-count">19</p>
-                        <p class="employee-p">Categories</p>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <h2>Influential Figures. Timeless Wisdom.</h2>
+                        <p>inspiroquote.me features inspiration from the world's most important philosophers, inventors, scientists, religious figures, and leaders throughout history.</p>
+                        <div class="counter">
+                            <div class="counter-item">
+                                <p class="counter-count">19</p>
+                                <p class="employee-p">Categories</p>
+                            </div>
+                            <div class="counter-item">
+                                <p class="counter-count">151</p>
+                                <p class="customer-p">Authors</p>
+                            </div>
+                            <div class="counter-item">
+                                <p class="counter-count">366</p>
+                                <p class="design-p">Quotes</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="counter">
-                        <p class="counter-count">151</p>
-                        <p class="customer-p">Authors</p>
-                    </div>
-                    <div class="counter">
-                        <p class="counter-count">366</p>
-                        <p class="design-p">Quotes</p>
+                    <div class="col-lg-6 d-flex justify-content-end">
+                        <img src="../static/images/filename.jpg" class="image">
                     </div>
                 </div>
             </div>
-        </section>    
+        </section>
+        
+        <section>
+            <div class="fetch-quotes">
+                <h3>Fetch Quotes</h3>
+                <p>All you need to do is send a request to <code>https://inspiroquote.me/api/[mode]</code>, where:</p>
+                <ul>
+                    <li><code>[mode]</code> = retreval type <code>[catgory, author, daily_quote]</code></li>
+                </ul>
+                <h4>Sample Requests</h4>
+<ul>
+    <li>
+        <strong>All Quotes:</strong>
+        <code>https://inspiroquote.me/api/v1/quotes</code> - Get all quotes
+    </li>
+    <li>
+        <strong>Quote of the Day:</strong>
+        <code>https://inspiroquote.me/api/v1/daily_quote</code> - Get the quote of the day
+    </li>
+    <li>
+        <strong>All Categories:</strong>
+        <code>https://inspiroquote.me/api/v1/categories</code> - Get all categories
+    </li>
+    <li>
+        <strong>Quotes by Category:</strong>
+        <code>https://inspiroquote.me/api/v1/categories/[id]/quotes</code> - Get quotes by category
+    </li>
+    <li>
+        <strong>All Authors:</strong>
+        <code>https://inspiroquote.me/api/v1/authors</code> - Get all authors
+    </li>
+    <li>
+        <strong>Quotes by Author:</strong>
+        <code>https://inspiroquote.me/api/v1/authors/[id]/quotes</code> - Get quotes by author
+    </li>
+    <!-- Add more sample requests as needed -->
+</ul>
+            </div>
+        </section>
     </main>
 
     <footer>
-        <p>Follow us on <a href="https://twitter.com/BrainyQuote" target="_blank" rel="noopener noreferrer">Twitter</a></p>
+        <p>Enjoying our API? Register with inspiroquote.me to unlock exclusive features 
+            and leave valuable feedback. Your insights help us improve our services for 
+            you and others. <a href="http://localhost:5000/register">Sign up today</a> 
+            and share your thoughts!</p>
     </footer>
 </body>
 </html>
