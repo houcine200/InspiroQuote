@@ -106,3 +106,129 @@ nav ul li {
     margin-right: 10px; /* Adjust as needed */
 }
 
+.content-block {
+    width: 48%;
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    background-color: #ffffff;
+}
+
+.content-image {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.section-with-image-right {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Adjusts the space distribution */
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    background-color: #4c51bf;
+}
+
+.section-with-image-right .image-container {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end; /* Aligns the image to the right */
+}
+
+.section-with-image-right .content-image {
+    max-width: 100%; /* Adjust the size as needed */
+    height: auto;
+    width: 100%;
+    margin-left: 20px;
+}
+
+.section-with-image-right .text-content {
+    flex: 2;
+}
+
+.content-block {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    background-color: #4c51bf;
+}
+
+.section-with-image-left .image-container {
+    flex: 1;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.section-with-image-left .content-image {
+    max-width: 100%; 
+    height: auto;
+    width: 100%;
+    margin-left: 20px;
+}
+
+.section-with-image-left .text-content {
+    flex: 2;
+}
+
+@media (max-width: 768px) {
+    .section-with-image-left, .section-with-image-right {
+        flex-direction: column; /* Stack image and text vertically on small screens */
+    }
+
+    .section-with-image-left .content-image, 
+    .section-with-image-right .content-image {
+        max-width: 100%; /* Full width of the container */
+        margin: 0 auto 20px; /* Center align and add space below the image */
+    }
+}
+
+/* Existing styles for .section-with-image-right */
+.section-with-image-right {
+    display: flex;
+    align-items: center;
+}
+
+.section-with-image-right .text-content,
+.section-with-image-right .image-container {
+    flex: 1;
+}
+
+.section-with-image-right .image-container {
+    order: 2; /* Pushes the image to the right */
+    padding-left: 20px; /* Adds some space between the text and the image */
+}
+
+/* Additional styling for the second section if needed */
+.second-image-right .image-container {
+    /* You can add specific styles for the second image container here if needed */
+}
+
+.left {
+    margin-right: auto;
+    margin-left: 0;
+}
+
+.right {
+    margin-left: auto;
+    margin-right: 0;
+}
+
+@media (max-width: 768px) {
+    .content-block {
+        width: 100%; 
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .left, .right {
+    }
+}
