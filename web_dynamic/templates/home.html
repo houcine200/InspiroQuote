@@ -92,33 +92,40 @@
                     <li><code>[mode]</code> = retreval type <code>[catgory, author, daily_quote]</code></li>
                 </ul>
                 <h4>Sample Requests</h4>
-<ul>
-    <li>
-        <strong>All Quotes:</strong>
-        <code>https://inspiroquote.me/api/v1/quotes</code> - Get all quotes
-    </li>
-    <li>
-        <strong>Quote of the Day:</strong>
-        <code>https://inspiroquote.me/api/v1/daily_quote</code> - Get the quote of the day
-    </li>
-    <li>
-        <strong>All Categories:</strong>
-        <code>https://inspiroquote.me/api/v1/categories</code> - Get all categories
-    </li>
-    <li>
-        <strong>Quotes by Category:</strong>
-        <code>https://inspiroquote.me/api/v1/categories/[id]/quotes</code> - Get quotes by category
-    </li>
-    <li>
-        <strong>All Authors:</strong>
-        <code>https://inspiroquote.me/api/v1/authors</code> - Get all authors
-    </li>
-    <li>
-        <strong>Quotes by Author:</strong>
-        <code>https://inspiroquote.me/api/v1/authors/[id]/quotes</code> - Get quotes by author
-    </li>
-    <!-- Add more sample requests as needed -->
-</ul>
+                <ul>
+                    <li>
+                        <strong>All Quotes:</strong><br>
+                        <strong>Endpoint:</strong> <a href="https://inspiroquote.me:5001/api/v1/quotes" target="_blank">https://inspiroquote.me:5001/api/v1/quotes</a><br>
+                        <strong>Description:</strong> Retrieve a JSON representation containing all available quotes within the InspiroQuote database.
+                    </li>
+                    <li>
+                        <strong>Quote of the Day:</strong><br>
+                        <strong>Endpoint:</strong> <a href="https://inspiroquote.me:5001/api/v1/daily_quote" target="_blank">https://inspiroquote.me:5001/api/v1/daily_quote</a><br>
+                        <strong>Description:</strong> Obtain the quote of the day in JSON format, dynamically updated to provide daily inspiration.
+                    </li>
+                    <li>
+                        <strong>All Categories:</strong><br>
+                        <strong>Endpoint:</strong> <a href="https://inspiroquote.me:5001/api/v1/categories" target="_blank">https://inspiroquote.me:5001/api/v1/categories</a><br>
+                        <strong>Description:</strong> Access a JSON array listing all available categories for categorizing quotes within the InspiroQuote database.
+                    </li>
+                    <li>
+                        <strong>Quotes by Category:</strong><br>
+                        <strong>Endpoint:</strong> <code>https://inspiroquote.me:5001/api/v1/categories/[id]/quotes</code><br>
+                        <strong>Description:</strong> Retrieve a JSON array containing quotes filtered by a specific category identified by its unique ID.
+                    </li>
+                    <li>
+                        <strong>All Authors:</strong><br>
+                        <strong>Endpoint:</strong> <a href="https://inspiroquote.me:5001/api/v1/authors" target="_blank">https://inspiroquote.me:5001/api/v1/authors</a><br>
+                        <strong>Description:</strong> Fetch a JSON array listing all authors contributing quotes within the InspiroQuote database.
+                    </li>
+                    <li>
+                        <strong>Quotes by Author:</strong><br>
+                        <strong>Endpoint:</strong> <code>https://inspiroquote.me:5001/api/v1/authors/[id]/quotes</code><br>
+                        <strong>Description:</strong> Retrieve a JSON array containing quotes authored by a specific individual identified by their unique ID.
+                    </li>
+                </ul>
+                
+                
             </div>
         </section>
     </main>
@@ -126,8 +133,9 @@
     <footer>
         <p>Enjoying our API? Register with inspiroquote.me to unlock exclusive features 
             and leave valuable feedback. Your insights help us improve our services for 
-            you and others. <a href="http://localhost:5000/register">Sign up today</a> 
-            and share your thoughts!</p>
+            you and others. <a href="https://inspiroquote.me/register">Sign up</a>
+            today and share your thoughts!
+        </p>
     </footer>
 </body>
 </html>
