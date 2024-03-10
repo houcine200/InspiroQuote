@@ -1,38 +1,66 @@
-/* quote_of_the_day.css */
-
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    margin: 0;
-    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(to right top, #e9ecef, #dae0e5, #c8d1db, #b9c2d1, #abc4c8, #c1a2f3, #b58ff2, rgb(173, 123, 244), #7d34f3, #7a30f2, #7a30f1, #6610f2);
+    padding: 20px;
+    min-height: 100vh;
+    background-attachment: fixed;
+    color: #333;
 }
 
 .container {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+    width: 100%;
     max-width: 800px;
-    margin: 20px auto;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 40px auto;
 }
 
-h1 {
+h1, h2 {
     text-align: center;
+    color: #4c51bf;
+}
+
+p {
+    text-align: justify;
     margin-bottom: 20px;
 }
 
-#quote-container {
-    text-align: center;
+#category-select, button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px;
+    width: 50%;
+    border-radius: 8px;
+    border: 2px solid #ced4da;
+    background-color: #f8f9fa;
+    color: #495057;
 }
 
-#quote-text {
-    font-size: 24px;
-    margin-bottom: 10px;
+button {
+    background-color: #4c51bf;
+    color: white;
+    cursor: pointer;
+    border: none;
 }
 
-#quote-author {
-    font-style: italic;
-    color: #888;
+button:hover {
+    background-color: #0056b3;
+}
+
+#categories-list, #quotes-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+#categories-list li, #quotes-list li {
+    background-color: #f8f9fa;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 8px;
+    border-left: 5px solid #4c51bf;
 }
 
 nav {
@@ -47,21 +75,4 @@ nav ul li {
     border-radius: 8px; 
     border-left: 5px solid #4c51bf;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-}
-
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-image: url("../images/baydapage.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    color: #333;
-}
-
-html, body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
 }
