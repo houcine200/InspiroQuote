@@ -106,15 +106,6 @@ nav ul li {
     margin-right: 10px; /* Adjust as needed */
 }
 
-.content-block {
-    width: 48%;
-    margin-bottom: 20px;
-    padding: 20px;
-    border-radius: 20px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    background-color: #ffffff;
-}
-
 .content-image {
     max-width: 100%;
     height: auto;
@@ -185,11 +176,6 @@ nav ul li {
     flex: 2;
 }
 
-@media (max-width: 768px) {
-    .section-with-image-left, .section-with-image-right {
-        flex-direction: column; /* Stack image and text vertically on small screens */
-    }
-
     .section-with-image-left .content-image, 
     .section-with-image-right .content-image {
         max-width: 100%; /* Full width of the container */
@@ -221,14 +207,6 @@ nav ul li {
 .right {
     margin-left: auto;
     margin-right: 0;
-}
-
-@media (max-width: 768px) {
-    .content-block {
-        width: 100%; 
-        margin-left: auto;
-        margin-right: auto;
-    }
 }
 
 .landing {
