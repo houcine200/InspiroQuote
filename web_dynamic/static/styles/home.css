@@ -207,11 +207,6 @@ nav ul li {
     padding-left: 20px; /* Adds some space between the text and the image */
 }
 
-/* Additional styling for the second section if needed */
-.second-image-right .image-container {
-    /* You can add specific styles for the second image container here if needed */
-}
-
 .left {
     margin-right: auto;
     margin-left: 0;
@@ -227,8 +222,5 @@ nav ul li {
         width: 100%; 
         margin-left: auto;
         margin-right: auto;
-    }
-
-    .left, .right {
     }
 }
