@@ -255,6 +255,17 @@ nav ul li {
 #features {
     text-align: center;
     padding: 50px 20px;
+    background: linear-gradient(to right top, #e9ecef, #dae0e5, #c8d1db, #b9c2d1, #abc4c8, #a1c3c8, #93c2c9, rgb(218, 215, 222), #7dbdc7, #71c0cd, #6dcad8, #62cada);
+}
+
+#fetch-quotes {
+    text-align: center;
+    padding: 50px 20px;
+    background: linear-gradient(to right top, #e9ecef, #dae0e5, #c8d1db, #b9c2d1, #abc4c8, #a1c3c8, #93c2c9, rgb(218, 215, 222), #7dbdc7, #71c0cd, #6dcad8, #62cada);
+}
+
+#about {
+    background: linear-gradient(to right top, #e9ecef, #dae0e5, #c8d1db, #b9c2d1, #abc4c8, #a1c3c8, #93c2c9, rgb(218, 215, 222), #7dbdc7, #71c0cd, #6dcad8, #62cada);
 }
 
 .feature {
