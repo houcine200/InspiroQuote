@@ -7,10 +7,28 @@ body {
     background-attachment: fixed;
 }
 
-header h1 {
+header {
+    background-image: url('../images/Inspiroquote-cover.webp');
+    background-size: cover;
+    text-align: center;
+    color: black;
+    padding-top: 20px;
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5), -4px -4px 8px rgba(255, 255, 255, 0.5);
+    height: 700px; /* Adjust the height as needed */
+}
+.title-box {
+    height: 110px;
+    margin-top: 165px;
+    background: linear-gradient(to right top, #e9ecef, #dae0e5, #c8d1db, #b9c2d1, #abc4c8, #c1a2f3, #b58ff2, rgb(173, 123, 244), #7d34f3, #7a30f2, #7a30f1, #6610f2);
+    width : 400px;
+    margin-left: 400px;
+    border-radius: 5px;
+}
+
+h1 {
     text-align: center;
     color: #4c51bf;
-    padding-top: 20px;
+    padding-top: 50px;
 }
 
 header p {
