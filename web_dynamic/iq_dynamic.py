@@ -49,19 +49,9 @@ def quote_of_the_day():
     user = g.user if hasattr(g, 'user') else None
     return render_template('quote_of_the_day.html', user=user)
 
-@app.route('/about', methods=['GET'], strict_slashes=False)
-def about():
-    load_logged_in_user()  # Load current user
-    user = g.user if hasattr(g, 'user') else None
-    return render_template('about.html', user=user)
-
 @app.route('/register', methods=['GET'], strict_slashes=False)
 def register():
     return render_template('registration.html')
-
-@app.route('/index', methods=['GET'], strict_slashes=False)
-def index():
-    return render_template('index.html')
 
 @app.route('/users', methods=['GET'], strict_slashes=False)
 def users():
