@@ -112,6 +112,7 @@ def profile():
         users = response.json()
         for user in users:
             if user['email'] == user_email:
+                g.user = user
                 return render_template("profile.html", user=user)
         return jsonify({'error': 'User not found.'}), 404  # Not Found
     else:
