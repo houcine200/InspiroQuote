@@ -252,4 +252,31 @@ nav ul li {
     border: none;
 }
 
+#features {
+    text-align: center;
+    padding: 50px 20px;
+}
 
+.feature {
+    margin: 20px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: inline-block;
+    width: 30%;
+    vertical-align: top;
+}
+
+.feature-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.feature h3 {
+    color: #4c51bf;
+}
+
+.feature p {
+    text-align: left;
+}
