@@ -78,7 +78,8 @@ footer a:hover {
 }
 
 nav {
-    background-color: #2A2A72;
+    margin-top: 12px;
+    background-color: transparent;
 }
 
 nav ul li {
@@ -250,3 +251,5 @@ nav ul li {
     background-color: transparent;
     border: none;
 }
+
+

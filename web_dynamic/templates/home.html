@@ -16,13 +16,21 @@
             <h2>InspiroQuote</h2>
             <p>Share our collection of inspirational and famous quotes by authors you know and love.</p>
         </div>
-        
+        <nav class="home-nav">
+            <ul>
+                <li><a href="#welcome">Welcome</a></li>
+                <li><a href="#empowering-moments">Empowering Moments</a></li>
+                <li><a href="#discover-wisdom">Discover Wisdom</a></li>
+                <li><a href="#influential-figures">Influential Figures</a></li>
+                <li><a href="#fetch-quotes">Fetch Quotes</a></li>
+            </ul>
+        </nav>
         
     </header>
 
 
     <main>
-        <section>
+        <section id="welcome">
             {% if g.user %}
             <!-- Display personalized welcome message for logged-in user -->
             <h2>Welcome, {{ g.user.first_name }}!</h2>
@@ -34,7 +42,7 @@
         </section>
 
         <!-- First Landing Page Section  ha fin tzid dakchi dyalk-->
-        <section class="content-block section-with-image-right">
+        <section id="empowering-moments" class="content-block section-with-image-right">
             <div class="text-content">
                 <h2>Empowering Moments with Every Quote</h2>
                 <p>Inspiroquote unlocks a world of inspiration with a convenient API that delivers impactful quotes from history's most influential minds directly to you. Forget navigating through cluttered databases or facing unnecessary registrations. Inspiroquote streamlines your access to wisdom, motivation, and the spark of inspiration you've been seeking.</p>
@@ -43,7 +51,7 @@
                 <img src="../static/images/picture.webp" alt="Description of Image" class="content-image">
             </div>
         </section>               
-        <section class="content-block">
+        <section id="discover-wisdom" class="content-block">
             <div class="row">
                 <!-- Image Container on the left -->
                 <div class="col-lg-6 image-container">
@@ -60,7 +68,7 @@
         </section>          
         <!-- 7add hna-->
         
-        <section class="landing">
+        <section id="influential-figures" class="landing">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-6">
@@ -88,7 +96,7 @@
             </div>
         </section>
         
-        <section>
+        <section id="fetch-quotes">
             <div class="fetch-quotes">
                 <h3>Fetch Quotes</h3>
                 <p>All you need to do is send a request to <code>https://inspiroquote.me/api/[mode]</code>, where:</p>
