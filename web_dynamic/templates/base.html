@@ -37,9 +37,7 @@
                     <li class="nav-item">
                         <a class="nav-link" href="/logout">Logout</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/profile">Profile</a>
-                    </li>
+                    
                 {% else %}
                     <li class="nav-item">
                         <a class="nav-link" href="/login">Login</a>
@@ -50,15 +48,21 @@
                 {% endif %}
             </ul>
         </div>
+        <!-- Mini-profile section -->
+        {% if g.user %}
+            <a href="/profile" class="mini-profile">
+                <div>
+                    <img src="/static/images/profile_picture.jpg" alt="Profile Picture" width="70" height="70">
+                </div>
+                <div>
+                    <p style="text-align: center;">{{ user.first_name }}</p>
+                    <!-- Add more profile information here if needed -->
+                </div>
+            </a>
+        {% endif %}
     </nav>
 
-    <!-- Mini-profile section -->
-    <div class="mini-profile">
-        {% if g.user %}
-        <p>Welcome, {{ user.first_name }}!</p>
-        <!-- Add more profile information here if needed -->
-        {% endif %}
-    </div>
+    
 
     <div class="container">
         {% block content %}
