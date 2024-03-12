@@ -50,16 +50,25 @@
         </div>
         <!-- Mini-profile section -->
         {% if g.user %}
-            <a href="/profile" class="mini-profile">
-                <div>
-                    <img src="/static/images/profile_picture.jpg" alt="Profile Picture" width="70" height="70">
-                </div>
-                <div>
-                    <p style="text-align: center;">{{ user.first_name }}</p>
-                    <!-- Add more profile information here if needed -->
-                </div>
-            </a>
+            {% if request.path == '/reviews' %}
+                <a href="/profile" class="mini-profile">
+                    <div>
+                        <img src="/static/images/profile_picture.jpg" alt="Profile Picture" width="70" height="70">
+                    </div>
+                </a>
+            {% else %}
+                <a href="/profile" class="mini-profile">
+                    <div>
+                        <img src="/static/images/profile_picture.jpg" alt="Profile Picture" width="70" height="70">
+                    </div>
+                    <div>
+                        <p style="text-align: center;">{{ g.user.first_name }}</p>
+                        <!-- Add more profile information here if needed -->
+                    </div>
+                </a>
+            {% endif %}
         {% endif %}
+
     </nav>
 
     <br></br>
