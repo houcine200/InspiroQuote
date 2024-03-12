@@ -1,0 +1,29 @@
+GET http://localhost:5000/api/v1/categories/58911671-b745-4b90-b9ff-c0a073a8a5c1/quotes
+Content-Type: application/json
+
+###
+
+POST http://localhost:5000/api/v1/categories/58911671-b745-4b90-b9ff-c0a073a8a5c1/quotes
+Content-Type: application/json
+
+{
+    "author": "Author Name 2",
+    "text": "Quote Text 2"
+}
+
+###
+
+PUT http://localhost:5000/api/v1/quotes/6bd58443-c5c6-4cb7-b02d-27ed9cb164d4
+Content-Type: application/json
+
+{
+    "author": "Updated Author Name",
+    "text": "Updated Quote Text"
+}
+
+###
+
+DELETE http://localhost:5000/api/v1/quotes/6bd58443-c5c6-4cb7-b02d-27ed9cb164d4
+Content-Type: application/json
+
+###
