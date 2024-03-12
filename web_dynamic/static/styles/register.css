@@ -1,4 +1,3 @@
-/* Adjustments for Registration Container and Header */
 body {
     font-family: 'Roboto', sans-serif;
     background: linear-gradient(to right top, #e9ecef, #dae0e5, #c8d1db, #b9c2d1, #abc4c8, #c1a2f3, #b58ff2, rgb(173, 123, 244), #7d34f3, #7a30f2, #7a30f1, #6610f2);
@@ -13,26 +12,23 @@ body {
 }
 
 h1 {
-    color: #ffffff; /* Light color for better contrast with the background */
+    color: #ffffff;
     margin-bottom: 30px;
-    font-size: 2.5rem; /* Bigger font size for the title */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Text shadow for depth */
+    font-size: 2.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 form#registration-form {
     background-color: #ffffff;
     padding: 40px;
     border-radius: 20px;
-    box-shadow: 0 8px 16px rgba(0,0,0,0.2); /* Stronger shadow for a floating effect */
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
     display: flex;
     flex-direction: column;
     width: 100%;
-    max-width: 600px; /* Adjusted width for better form layout */
-    border: 1px solid #ccc; /* Subtle border for definition */
+    max-width: 600px;
+    border: 1px solid #ccc;
 }
-
-/* Keep other existing styles unchanged */
-
 
 form#registration-form label {
     margin-top: 20px;
@@ -51,14 +47,14 @@ form#registration-form input, form#registration-form button {
 }
 
 form#registration-form button {
-    background-color: #4c51bf; /* Consistent with the theme's primary color */
+    background-color: #4c51bf;
     color: white;
     cursor: pointer;
     font-size: 16px;
 }
 
 form#registration-form button:hover {
-    background-color: #0056b3; /* Darken the button a bit on hover for feedback */
+    background-color: #0056b3;
 }
 
 #registration-message {

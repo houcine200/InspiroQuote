@@ -3,7 +3,7 @@ body {
     background: linear-gradient(to right top, #e9ecef, #dae0e5, #c8d1db, #b9c2d1, #abc4c8, #c1a2f3, #b58ff2, rgb(173, 123, 244), #7d34f3, #7a30f2, #7a30f1, #6610f2);
     margin: 0;
     padding: 20px;
-    min-height: 100vh; /* Ensure full height */
+    min-height: 100vh;
     background-attachment: fixed;
 }
 

@@ -16,7 +16,7 @@ document.getElementById("login-form").addEventListener("submit", function(event)
     })
     .then(response => {
         if (response.ok) {
-            window.location.href = "/profile/" + encodeURIComponent(loginData.email); // Encode email to handle special characters
+            window.location.href = "/profile/" + encodeURIComponent(loginData.email);
         } else {
             document.getElementById("login-message").textContent = "Invalid email or password.";
         }

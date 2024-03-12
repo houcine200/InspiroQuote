@@ -14,7 +14,7 @@ header {
     color: black;
     padding-top: 20px;
     text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5), -4px -4px 8px rgba(255, 255, 255, 0.5);
-    height: 700px; /* Adjust the height as needed */
+    height: 700px;
 }
 .title-box {
     height: 110px;
@@ -34,14 +34,14 @@ h1 {
 header p {
     text-align: center;
     margin: 20px auto;
-    max-width: 800px; /* Control the width of the header text */
+    max-width: 800px;
 }
 
 main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 40px; /* Adjust as needed */
+    margin-top: 40px;
 }
 
 section {
@@ -50,8 +50,7 @@ section {
     border-radius: 20px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     width: 100%;
-    /* Adjust based on the content width */
-    margin-bottom: 20px; /* Space between sections if you add more */
+    margin-bottom: 20px;
 }
 
 section h2, section p {
@@ -59,22 +58,22 @@ section h2, section p {
 }
 
 footer {
-    margin-top: 40px; /* Ensure there's space between the content and the footer */
+    margin-top: 40px;
     text-align: center;
     padding: 20px;
 }
 
 footer p {
-    color: #2A2A72; /* Matches the navbar color */
+    color: #2A2A72;
 }
 
 footer a {
-    color: #6610f2; /* A vibrant color for links */
-    text-decoration: none; /* Optional: removes underline from links */
+    color: #6610f2;
+    text-decoration: none;
 }
 
 footer a:hover {
-    text-decoration: underline; /* Optional: adds an underline on hover for clarity */
+    text-decoration: underline;
 }
 
 nav {
@@ -93,10 +92,10 @@ nav ul li {
 }
 
 .image {
-    width: 100%; /* Set the maximum width of the image to 100% of its container */
-    height: auto; /* Maintain the aspect ratio of the image */
-    display: block; /* Ensure the image is displayed as a block element */
-    margin: 0 auto; /* Center the image horizontally */
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
     text-align: right;  
 }
 
@@ -108,31 +107,23 @@ nav ul li {
 .counter-item {
     display: flex;
     align-items: center;
-    margin-bottom: 20px; /* Increased margin for more space */
+    margin-bottom: 20px;
     margin-left: 20px;
 }
 
 .counter-count {
-    width: 75px; /* Adjust as needed */
-    height: 75px; /* Adjust as needed */
-    border-radius: 50%; /* Ensures circular shape */
-    background-color: #007bff; /* Change this color as needed */
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    background-color: #007bff;
     color: #fff;
-    font-size: 16px; /* Adjust as needed */
+    font-size: 16px;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-right: 10px; /* Adjust as needed */
+    margin-right: 10px;
 }
 
-.content-block {
-    width: 48%;
-    margin-bottom: 20px;
-    padding: 20px;
-    border-radius: 20px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    background-color: #ffffff;
-}
 
 .content-image {
     max-width: 100%;
@@ -144,7 +135,7 @@ nav ul li {
 .section-with-image-right {
     display: flex;
     align-items: center;
-    justify-content: space-between; /* Adjusts the space distribution */
+    justify-content: space-between;
     width: 100%;
     margin-bottom: 20px;
     padding: 20px;
@@ -156,11 +147,11 @@ nav ul li {
 .section-with-image-right .image-container {
     flex: 1;
     display: flex;
-    justify-content: flex-end; /* Aligns the image to the right */
+    justify-content: flex-end;
 }
 
 .section-with-image-right .content-image {
-    max-width: 100%; /* Adjust the size as needed */
+    max-width: 100%;
     height: auto;
     width: 100%;
     margin-left: 20px;
@@ -178,13 +169,10 @@ nav ul li {
     padding: 20px;
     border-radius: 20px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    background-color: #4c51bf;
-    background-color: gray;
     border-radius: 0;
     box-shadow: none;
-    background-color: transparent;
+    background-color: transparent; 
     border: none;
-
 }
 
 .section-with-image-left .image-container {
@@ -206,17 +194,16 @@ nav ul li {
 
 @media (max-width: 768px) {
     .section-with-image-left, .section-with-image-right {
-        flex-direction: column; /* Stack image and text vertically on small screens */
+        flex-direction: column;
     }
 
     .section-with-image-left .content-image, 
     .section-with-image-right .content-image {
-        max-width: 100%; /* Full width of the container */
-        margin: 0 auto 20px; /* Center align and add space below the image */
+        max-width: 100%;
+        margin: 0 auto 20px;
     }
 }
 
-/* Existing styles for .section-with-image-right */
 .section-with-image-right {
     display: flex;
     align-items: center;
@@ -228,8 +215,8 @@ nav ul li {
 }
 
 .section-with-image-right .image-container {
-    order: 2; /* Pushes the image to the right */
-    padding-left: 20px; /* Adds some space between the text and the image */
+    order: 2;
+    padding-left: 20px;
 }
 
 .left {

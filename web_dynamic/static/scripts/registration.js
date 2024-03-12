@@ -1,4 +1,3 @@
-// registration.js
 document.addEventListener("DOMContentLoaded", function() {
   const registrationForm = document.getElementById("registration-form");
   const registrationMessage = document.getElementById("registration-message");

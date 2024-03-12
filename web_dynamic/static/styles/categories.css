@@ -78,20 +78,19 @@ nav ul li {
 }
 
 .quote-author {
-    color: #333333; /* Change color code as desired */
+    color: #333333;
     font-style: italic;
 }
 
 .quote-text {
-    color: black; /* Black color */
-    font-weight: bold; /* Bold font style */
+    color: black;
+    font-weight: bold;
 }
 
-/* Apply different background colors to even and odd quote items */
 #quotes-list li:nth-child(even) {
-    background-color: wheat; /* Light background color */
+    background-color: wheat;
 }
 
 #quotes-list li:nth-child(odd) {
-    background-color: #e9ecef; /* Another light background color */
+    background-color: #e9ecef;
 }

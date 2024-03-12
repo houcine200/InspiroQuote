@@ -1,4 +1,3 @@
-// scripts.js
 document.addEventListener("DOMContentLoaded", function() {
   fetch("http://localhost:5001/api/v1/users")
       .then(response => response.json())

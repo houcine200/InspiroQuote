@@ -27,25 +27,25 @@ def load_logged_in_user():
 @app.route('/', methods=['GET'], strict_slashes=False)
 @app.route('/home', methods=['GET'], strict_slashes=False)
 def home():
-    load_logged_in_user()  # Load current user
+    load_logged_in_user()
     user = g.user if hasattr(g, 'user') else None
     return render_template("home.html", user=user)
 
 @app.route('/categories', methods=['GET'], strict_slashes=False)
 def categories():
-    load_logged_in_user()  # Load current user
+    load_logged_in_user()
     user = g.user if hasattr(g, 'user') else None
     return render_template('categories.html', user=user)
 
 @app.route('/authors', methods=['GET'], strict_slashes=False)
 def authors():
-    load_logged_in_user()  # Load current user
+    load_logged_in_user()
     user = g.user if hasattr(g, 'user') else None
     return render_template('authors.html', user=user)
 
 @app.route('/quote_of_the_day', methods=['GET'], strict_slashes=False)
 def quote_of_the_day():
-    load_logged_in_user()  # Load current user
+    load_logged_in_user()
     user = g.user if hasattr(g, 'user') else None
     return render_template('quote_of_the_day.html', user=user)
 
@@ -59,17 +59,6 @@ def users():
 
 API_URL = 'http://localhost:5001/api/v1/users'
 
-def load_logged_in_user():
-    g.user = None
-    if 'user_email' in request.cookies:
-        user_email = request.cookies.get('user_email')
-        response = requests.get(API_URL)
-        if response.status_code == 200:
-            users = response.json()
-            for user in users:
-                if user['email'] == user_email:
-                    g.user = user
-                    break
 
 @app.route("/login", methods=["POST", "GET"])
 def login():
@@ -104,20 +93,19 @@ def profile():
             if user['email'] == user_email:
                 g.user = user
                 return render_template("profile.html", user=user)
-        return jsonify({'error': 'User not found.'}), 404  # Not Found
+        return jsonify({'error': 'User not found.'}), 404
     else:
         return jsonify({'error': 'An error occurred. Please try again later.'}), 500  # Internal Server Error
 
 @app.route("/logout")
 def logout():
-    # Clear the user's cookie
     response = make_response(redirect(url_for("home")))
     response.set_cookie('user_email', '', expires=0)
     return response
 
 @app.route('/reviews', methods=['GET', 'POST'], strict_slashes=False)
 def reviews():
-    load_logged_in_user()  # Load current user
+    load_logged_in_user()
     user = g.user if hasattr(g, 'user') else None
 
     if request.method == 'POST':
@@ -132,14 +120,12 @@ def reviews():
         else:
             return jsonify({'error': 'User not logged in'}), 401
 
-    # Fetch all users
     users_response = requests.get('http://localhost:5001/api/v1/users')
     if users_response.status_code == 200:
         users_data = users_response.json()
     else:
         return jsonify({'error': 'Failed to fetch users'}), 500
     
-    # Fetch reviews for each user
     reviews_by_user = {}
     for user in users_data:
         user_id = user['id']

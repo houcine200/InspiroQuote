@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
     fetchCategories();
-    // Bind the searchQuotes function to the search button's click event
     document.getElementById('search-button').addEventListener('click', searchQuotes);
 });
 
@@ -31,14 +30,12 @@ function searchQuotes() {
     const categoryId = document.getElementById('category-select').value;
     let url;
 
-    // Ensure the function fetches and displays quotes only when a valid category is selected
     if (categoryId) {
         url = `http://localhost:5001/api/v1/categories/${categoryId}/quotes`;
     } else {
-        // If no category is selected, clear the quotes list and alert the user
         document.getElementById('quotes-list').innerHTML = '';
         alert('Please select a category to search for quotes.');
-        return; // Exit the function early
+        return;
     }
 
     fetch(url)
@@ -50,7 +47,7 @@ function searchQuotes() {
         })
         .then(data => {
             const quotesList = document.getElementById('quotes-list');
-            quotesList.innerHTML = ''; // Clear previous quotes
+            quotesList.innerHTML = '';
 
             data.forEach(quote => {
                 const listItem = document.createElement('li');
@@ -58,7 +55,6 @@ function searchQuotes() {
                 const authorName = document.createElement('div');
             
                 quoteText.textContent = `"${quote.text}"`;
-                // Adjust according to your actual API response structure
                 authorName.textContent = `- ${quote.author_name}`;
             
                 quoteText.classList.add('quote-text');
