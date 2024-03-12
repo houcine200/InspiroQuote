@@ -31,17 +31,6 @@ p {
     margin-bottom: 20px;
 }
 
-#category-select, button {
-    display: block;
-    margin: 20px auto;
-    padding: 10px;
-    width: 50%;
-    border-radius: 8px;
-    border: 2px solid #ced4da;
-    background-color: #f8f9fa;
-    color: #495057;
-}
-
 button {
     background-color: #4c51bf;
     color: white;
@@ -53,18 +42,6 @@ button:hover {
     background-color: #0056b3;
 }
 
-#categories-list, #quotes-list {
-    list-style-type: none;
-    padding: 0;
-}
-
-#categories-list li, #quotes-list li {
-    background-color: #f8f9fa;
-    margin: 10px 0;
-    padding: 10px;
-    border-radius: 8px;
-    border-left: 5px solid #4c51bf;
-}
 
 nav {
     background-color: #2A2A72;
@@ -78,4 +55,14 @@ nav ul li {
     border-radius: 8px; 
     border-left: 5px solid #4c51bf;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+#quote-author {
+    color: #333333; /* Change color code as desired */
+    font-style: italic;
+}
+
+#quote-text {
+    color: black; /* Black color */
+    font-weight: bold; /* Bold font style */
 }
