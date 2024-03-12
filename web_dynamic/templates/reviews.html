@@ -24,15 +24,26 @@
     
     <hr>
     
-    {% for user, reviews in reviews_by_user.items() %}
-    <ul>
-        {% for review in reviews %}
-        <li>{{ user }}: {{ review.text }}</li>
-        {% endfor %}
-    </ul>
-    {% endfor %}
+    {% if reviews_by_user %}
+        <div class="comment-section">
+            {% for user, reviews in reviews_by_user.items() %}
+                <div class="user-comments">
+                    <ul>
+                        {% for review in reviews %}
+                        <h3>{{ user }}</h3>
+                            <div>{{ review.text }}</div>
+                            <hr>
+                        {% endfor %}
+                    </ul>
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <p>No comments available.</p>
+    {% endif %}
+
     
-    <hr>
+    <br>
     
     {% if g.user %}
     <h2>Add a Review</h2>
