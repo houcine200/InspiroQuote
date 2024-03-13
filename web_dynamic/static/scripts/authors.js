@@ -15,6 +15,9 @@ function fetchAuthors() {
             defaultOption.value = "";
             authorsDropdown.appendChild(defaultOption);
 
+            // Sort authors alphabetically by name
+            data.sort((a, b) => a.name.localeCompare(b.name));
+
             data.forEach(author => {
                 const option = document.createElement('option');
                 option.value = author.id;

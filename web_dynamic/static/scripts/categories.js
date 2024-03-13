@@ -14,6 +14,9 @@ function fetchCategories() {
         .then(data => {
             const categorySelect = document.getElementById('category-select');
 
+            // Sort categories alphabetically by name
+            data.sort((a, b) => a.name.localeCompare(b.name));
+
             data.forEach(category => {
                 const option = document.createElement('option');
                 option.value = category.id;
