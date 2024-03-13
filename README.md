@@ -1,5 +1,7 @@
 Inspiroquote
 
+https://www.inspiroquote.me/
+
 - Description:
 
 Inspiroquote is a web application designed to motivate, inspire, and provoke thought through a curated collection of quotes from famous authors and historical figures. Users can explore quotes by categories, discover daily quotes, and access detailed author profiles
@@ -68,6 +70,3 @@ Member 2: Hamza El imali
 https://www.linkedin.com/in/hamza-elimali/
 https://twitter.com/elimali_hamza
 https://github.com/Reallynoobcoder
-
-
-
