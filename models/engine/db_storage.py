@@ -1,8 +1,7 @@
 #!/usr/bin/python3
 """Defines the DBStorage engine."""
-import models
-from sqlalchemy import create_engine, MetaData
 from os import getenv
+from sqlalchemy import create_engine
 from models.base_model import Base
 from sqlalchemy.orm import sessionmaker, scoped_session
 from models.quote import Quote
@@ -16,8 +15,8 @@ classes = {
     "Category": Category,
     "Quote": Quote,
     "Author": Author,
-    "User": User,  # Add User class
-    "Review": Review  # Add Review class
+    "User": User,
+    "Review": Review
 }
 
 
@@ -44,14 +43,12 @@ class DBStorage:
         db_objects = {}
 
         if cls is not None:
-            # Query objects of the specified class
             query_result = self.__session.query(cls).all()
             for obj in query_result:
                 key = "{}.{}".format(type(obj).__name__, obj.id)
                 db_objects[key] = obj
 
         else:
-            # Query all types of objects
             for model_class in Base.__subclasses__():
                 table = self.__session.query(model_class).all()
                 for obj in table:
@@ -95,7 +92,6 @@ class DBStorage:
         if cls not in classes.values():
             return None
 
-        
         all_cls = self.all(cls)
         for value in all_cls.values():
             if (value.id == id):
@@ -104,9 +100,6 @@ class DBStorage:
         return None
 
 
-storage_t = getenv("IQ_TYPE_STORAGE")
-
 storage = DBStorage()
-
 
 storage.reload()
