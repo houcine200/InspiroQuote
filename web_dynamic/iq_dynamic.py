@@ -66,10 +66,13 @@ def login():
         email = request.form["email"]
         password = request.form["password"]
         
-        all_users = storage.all(User)
-        
-        for user in all_users.values():
-            if user.email == email and user.password == password:
+        response = requests.get(API_URL)
+        if response.status_code != 200:
+            return render_template("login.html", error="Failed to retrieve user data.")
+
+        all_users = response.json()
+        for user in all_users:
+            if user['email'] == email and user['password'] == password:
                 response = make_response(redirect(url_for("profile", email=email)))
                 response.set_cookie('user_email', email)
                 return response
