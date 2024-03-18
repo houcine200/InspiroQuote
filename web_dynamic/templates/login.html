@@ -8,21 +8,21 @@
     <title>InspiroQuotes</title>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/login.css') }}">
 </head>
-<div class="container mt-5"> <!-- Bootstrap classes for margin-top and a container -->
+<div class="container mt-5"> 
     <form action="/login" method="post" class="login-form">
         <div class="form-group">
             <label for="email">Email:</label>
-            <input type="email" id="email" class="form-control" name="email" required> <!-- Bootstrap form-control class -->
+            <input type="email" id="email" class="form-control" name="email" required> 
         </div>
         <div class="form-group">
             <label for="password">Password:</label>
             <input type="password" id="password" class="form-control" name="password" required>
         </div>
         <div class="form-group">
-            <input type="submit" class="btn btn-primary" value="Login"> <!-- Bootstrap button classes -->
+            <input type="submit" class="btn btn-primary" value="Login"> 
         </div>
         {% if error %}
-        <p class="error-message text-danger">{{ error }}</p> <!-- Bootstrap text color class -->
+        <p class="error-message text-danger">{{ error }}</p>
         {% endif %}
     </form>
 </div>
