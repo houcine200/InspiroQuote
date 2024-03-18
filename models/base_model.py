@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""Defines the BaseModel class and its functionality."""
 import uuid
 from datetime import datetime
 from sqlalchemy import Column, String, DateTime
