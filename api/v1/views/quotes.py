@@ -15,9 +15,10 @@ def get_all_quotes():
     all_quotes = storage.all(Quote)
     return jsonify([quote.to_dict() for quote in all_quotes.values()])
 
+
 @app_views.route('/daily_quote', methods=['GET'], strict_slashes=False)
 def quote_of_the_day():
-
+    """Get a quote of the day."""
     all_quotes = storage.all(Quote).values()
 
     if not all_quotes:
@@ -40,8 +41,10 @@ def quote_of_the_day():
     return jsonify(quote_dict)
 
 
-@app_views.route('/categories/<category_id>/quotes', methods=['GET'], strict_slashes=False)
+@app_views.route('/categories/<category_id>/quotes',
+                 methods=['GET'], strict_slashes=False)
 def get_quotes_by_category(category_id):
+    """Get quotes by category."""
     category = storage.get(Category, category_id)
     if category is None:
         abort(404)
@@ -52,7 +55,9 @@ def get_quotes_by_category(category_id):
         quotes_with_authors.append(quote_dict)
     return jsonify(quotes_with_authors)
 
-@app_views.route('/authors/<author_id>/quotes', methods=['GET'], strict_slashes=False)
+
+@app_views.route('/authors/<author_id>/quotes',
+                 methods=['GET'], strict_slashes=False)
 def get_quotes_by_author(author_id):
     """Get all Quote objects by author ID."""
     author = storage.get(Author, author_id)
@@ -61,6 +66,7 @@ def get_quotes_by_author(author_id):
 
     quotes = author.quotes if hasattr(author, 'quotes') else []
     return jsonify([quote.to_dict() for quote in quotes])
+
 
 @app_views.route('/quotes/<quote_id>', methods=['GET'], strict_slashes=False)
 def get_quote(quote_id):

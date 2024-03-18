@@ -7,11 +7,12 @@ from models.engine.db_storage import storage
 from models.author import Author
 from models.quote import Quote
 
+
 @app_views.route('/authors', methods=['GET'], strict_slashes=False)
 def retrieve_all_authors():
     """Get all authors without their quotes."""
     all_authors = storage.all(Author).values()
-    list_authors = [author.to_dict() for author in all_authors]  
+    list_authors = [author.to_dict() for author in all_authors]
     return jsonify(list_authors)
 
 
@@ -24,7 +25,8 @@ def retrieve_author(author_id):
     return jsonify(author.to_dict())
 
 
-@app_views.route('/authors/<string:author_id>', methods=['DELETE'], strict_slashes=False)
+@app_views.route('/authors/<string:author_id>',
+                 methods=['DELETE'], strict_slashes=False)
 def remove_author(author_id):
     """Delete an Author object by id."""
     author = storage.get(Author, author_id)

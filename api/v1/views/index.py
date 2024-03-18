@@ -7,6 +7,7 @@ from models.category import Category
 from models.quote import Quote
 from models.author import Author
 
+
 @app_views.route('/status', strict_slashes=False)
 def status():
     """ Status of API """

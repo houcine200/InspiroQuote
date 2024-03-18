@@ -19,10 +19,10 @@ def get_all_users():
 @app_views.route('/users/<user_id>', methods=['GET'], strict_slashes=False)
 def get_user(user_id):
     """Get a User object by ID"""
-    user = storage.get(User, user_id)  # Retrieve the user by ID
+    user = storage.get(User, user_id)
     if user is None:
-        abort(404)  # If user is not found, return 404 Not Found error
-    return jsonify(user.to_dict())  # Return user information as JSON
+        abort(404)
+    return jsonify(user.to_dict())
 
 
 @app_views.route('/users/<string:user_id>',

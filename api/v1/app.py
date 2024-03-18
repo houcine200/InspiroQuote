@@ -11,7 +11,6 @@ app.register_blueprint(app_views)
 CORS(app, resources={r"/*": {"origins": "*"}})
 
 
-
 @app.teardown_appcontext
 def close_storage_connection(exception):
     """Close the storage connection."""
