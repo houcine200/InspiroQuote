@@ -1,5 +1,10 @@
 #!/usr/bin/python3
 
+"""
+Flask web app for user registration, login,
+profile, and reviews, interacting with an API.
+"""
+
 from flask import Flask, render_template, redirect, url_for, request, jsonify, g, make_response
 import requests
 from models.category import Category
