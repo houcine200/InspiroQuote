@@ -5,7 +5,7 @@ https://www.inspiroquote.me/
 ## Introduction
 InspiroQuote is a web application designed to provide users with a daily dose of inspiration through a curated collection of quotes. It offers a user-friendly interface to explore quotes by categories, authors, and a special "Quote of the Day" feature. Developed by Houcine Walaq and Hamza El Imali, this project aims to inspire and motivate users from diverse backgrounds.
 
-- **Deployed Site:** [InspiroQuote](https://www.inspiroquote.com)
+- **Deployed Site:** [InspiroQuote](https://www.inspiroquote.me)
 - **Final Project Blog Article:** [Read Here](https://www.inspiroquote.com/blog)
 - **Authors LinkedIn:** [Hamza El Imali](https://www.linkedin.com/in/hamza-elimali/) | [Houcine Walaq](https://www.linkedin.com/in/houcine-walaq/)
 
