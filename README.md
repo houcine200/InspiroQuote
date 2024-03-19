@@ -79,7 +79,7 @@ On server:
 ```bash
     gunicorn --bind 0.0.0.0:5000 web_dynamic.iq_dynamic:app
 ```
-7. Open a web browser and navigate locally http://127.0.0.1:5000/ or your server.
+7. Open a web browser and navigate to your local server http://127.0.0.1:5000/ or ([your_server_ip]:5000/).
 
 
 ## Usage
@@ -142,6 +142,7 @@ https://github.com/Reallynoobcoder
 - [Goodreads](https://www.goodreads.com) - Platform integrating quotes with book recommendations and reviews.
 
 ---
+## https://www.inspiroquote.me/ screenshots
 
 ![InspiroQuote Author Quotes](https://github.com/houcine200/houcine200.github.io/blob/main/kola_Authors_quotes.png)
 ![InspiroQuote Quote of the Day](https://github.com/houcine200/houcine200.github.io/blob/main/kola_quote_of_the_day.png)
