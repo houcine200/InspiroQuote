@@ -13,15 +13,15 @@ InspiroQuote is a web application designed to provide users with a daily dose of
 ## Installation
 To install and run InspiroQuote locally, follow these steps:
 1. Clone this repository.
-
+```bash
     git clone https://github.com/houcine200/InspiroQuote.git
-
+```
 2. Navigate to the project directory.
-
+```bash
     cd ~/inspiroquote/
-
+```
 3. Install dependencies, python3, Flask, MySQL, SQLAlchemy, Gunicorn...
-
+```sql
     -- Create or use an existing database
     CREATE DATABASE IF NOT EXISTS iq_dev_db;
 
@@ -33,20 +33,21 @@ To install and run InspiroQuote locally, follow these steps:
 
     -- Grant SELECT privilege on performance_schema database
     GRANT SELECT ON performance_schema.* TO 'iq_dev'@'localhost';
-
+```
 
 4. Set up environment variables for MySQL database configuration:
-
+```bash
     echo 'export IQ_MYSQL_USER=iq_dev' >> ~/.bashrc
     echo 'export IQ_MYSQL_PWD=iq_dev_pwd' >> ~/.bashrc
     echo 'export IQ_MYSQL_HOST=localhost' >> ~/.bashrc
     echo 'export IQ_MYSQL_DB=iq_dev_db' >> ~/.bashrc
     echo 'export IQ_API_HOST=0.0.0.0' >> ~/.bashrc
     echo 'export IQ_API_PORT=5001' >> ~/.bashrc
-
+```
     then, run this command:
+```bash
         source ~/.bashrc
-
+```
 
 5. Run the Gunicorn server for the API:
 First populate the database:
