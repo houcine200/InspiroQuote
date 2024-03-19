@@ -102,8 +102,6 @@ Once installed, users can:
 
 ## Contributing:
 
-
-## Contributing
 Contributions are welcome! Feel free to open issues or submit pull requests to help improve InspiroQuote.
 
 - Team and Contributions
@@ -145,4 +143,6 @@ https://github.com/Reallynoobcoder
 
 ---
 
-![InspiroQuote Screenshots](https://github.com/houcine200/houcine200.github.io/blob/main/kola_Authors_quotes.png), (https://github.com/houcine200/houcine200.github.io/blob/main/kola_quote_of_the_day.png)
+![InspiroQuote Author Quotes](https://github.com/houcine200/houcine200.github.io/blob/main/kola_Authors_quotes.png)
+![InspiroQuote Quote of the Day](https://github.com/houcine200/houcine200.github.io/blob/main/kola_quote_of_the_day.png)
+
