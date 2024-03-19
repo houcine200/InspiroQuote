@@ -7,7 +7,7 @@ InspiroQuote is a web application designed to provide users with a daily dose of
 
 - **Deployed Site:** [InspiroQuote](https://www.inspiroquote.com)
 - **Final Project Blog Article:** [Read Here](https://www.inspiroquote.com/blog)
-- **Authors LinkedIn:** [Hamza El Imali](https://www.linkedin.com/in/hamza-el-imali/) | [Houcine Walaq](https://www.linkedin.com/in/houcine-walaq/)
+- **Authors LinkedIn:** [Hamza El Imali](https://www.linkedin.com/in/hamza-elimali/) | [Houcine Walaq](https://www.linkedin.com/in/houcine-walaq/)
 
 
 ## Installation
