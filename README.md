@@ -88,21 +88,21 @@ Once installed, users can:
 - Register and login to create personalized profiles and leave a review.
 - Save favorite quotes and share them on social media platforms or access them via API for integration into other applications.
 
-- Features:
+## Features:
 
 * Categories: Browse quotes based on specific themes such as love, motivation, and life.
 * Quote of the Day: Start your day with a powerful quote selected randomly each day.
 * Author Profiles: Learn more about your favorite authors and their contributions.
 
 
-- Technology Stack:
+## Technology Stack:
 
 * Frontend: HTML, CSS, JavaScript.
 * Backend: Flask (Python).
-* Database: Mysql.
+* Database: Mysql, SQLAlchemy.
 * API: Custom-built RESTful API for managing quotes and authors.
 * Version Control and Collaboration: GIT, GITHUB.
-* Server and Domain: LINUX, NGINX.
+* Server, Domain, Load Balancer, Web Server and Security: LINUX, namecheap, HAPROXY, NGINX, Certbot.
 
 ## Contributing:
 
