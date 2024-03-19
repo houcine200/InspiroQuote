@@ -45,37 +45,40 @@ To install and run InspiroQuote locally, follow these steps:
     echo 'export IQ_API_PORT=5001' >> ~/.bashrc
 ```
     then, run this command:
+
 ```bash
         source ~/.bashrc
 ```
 
 5. Run the Gunicorn server for the API:
 First populate the database:
-
+```bash
     ./population_db/query.py
-
+```
 
 Locally(for debugging and testing purposes):
-
+```bash
     python3 -m api.v1.app
-
+```
 On Server:
 if SSL certificate available, particularly if you're using HTTPS:
+```bash
     sudo -E /home/ubuntu/.local/bin/gunicorn --bind 0.0.0.0:5001 --certfile /etc/letsencrypt/live/inspiroquote.me/fullchain.pem --keyfile /etc/letsencrypt/live/inspiroquote.me/privkey.pem api.v1.app:app
-
+```
 else:
+```bash
     gunicorn --bind 0.0.0.0:5001 api.v1.app:app
-
+```
 6. Run the Gunicorn server for the web application:
 
 Locally(for debugging and testing purposes):
-
+```bash
     python3 -m web_dynamic.iq_dynamic
-
+```
 On server:
-
+```bash
     gunicorn --bind 0.0.0.0:5000 web_dynamic.iq_dynamic:app
-
+```
 7. Open a web browser and navigate locally http://127.0.0.1:5000/ or your server.
 
 
