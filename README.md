@@ -119,10 +119,6 @@ Contributions are what make the open-source community such an amazing place to l
 
 Please feel free to fork the repository and submit pull requests. For major changes, please open an issue first to discuss what you would like to change.
 
-- License: 
-
-Distributed under the MIT License. 
-
 Connect with Us:
 
 Member 1: Houcine Walaq
